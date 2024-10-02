@@ -1,0 +1,73 @@
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Información del Servicio</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  .header { background: #ffffff; padding: 10px; text-align: center; }
+  .content { margin: 60px; text-align: justify; }
+  .section { 
+    background-color: #ffffff; /* Color gris claro para el fondo */
+    margin-bottom: 1px; 
+    padding: 1px; /* Espaciado interno para separar el contenido de los bordes del recuadro */
+    border-radius: 10px; /* Bordes redondeados para el recuadro */
+  }
+  .section-title { font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #f76300; }
+  h1 {
+    color: #200075;
+    text-align: center;
+  }
+  li {
+    text-align: justify;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <img src="https://tecolsoft.com/wp-content/uploads/2022/09/logo-nuevo-1920x478.png" alt="Logo de la Empresa" width="500">
+</div>
+<div class="content">
+  <h1 class="section">Información del Servicio</h1>
+<div class="section">
+    <div class="section-title">ENLACES PARA LLENAR LAS ACTAS</div>
+    <p>Para completar el acta del servicio, por favor sigue el siguiente enlace: <a href="https://forms.office.com/r/6d6sN4RYs0">ACTA DE SERVICIO DIGITAL</a></p>
+    <p>Si aplica MANTENIMIENTO PREVENTIVO llenar el siguiente formulario: <a href="https://forms.office.com/r/E7yY0azM75">ACTA DE SERVICIO DE MANTENIMIENTO PREVENTIVO DIGITAL</a></p>  <div class="section">
+</div>
+<div class="section"></div>
+    <div class="section-title">HERRAMIENTAS PARA EL SERVICIO</div>
+    <p>Sr técnico, favor tener en cuenta las siguientes herramientas para el servicio</p>
+    <li>Brocha</li>
+    <li>Pasta térmica</li>
+    <li>Destornilladores</li>
+    <li>Disco duro externo</li>
+    <li>USB booteable (Windows 10 profesional última versión)</li>
+    <li>Convertidor SATA a USB (galleta) o PCI a USB</li>
+    <li>Tester</li>
+    <li>Herramientas de diagnóstico: hirens boot, cristal disk, HD centinel, Gabriel topala (info PC)</li></p>
+</div>
+<div class="section">
+    <div class="section-title">DATOS DEL CASO</div>
+    <p><strong>Número del caso: </strong> @{outputs('Get_response_details')?['body/ra8ea46f999194cf585a08bda0f99bd81']}</p>
+    <p><strong>Descripción del caso: </strong>@{outputs('Get_response_details')?['body/raeb9ccff94e04ff0b59b00b5f33a1ea1']} </p>
+    <p><strong>Fecha del servicio: </strong>@{outputs('Get_response_details')?['body/rc8592c458aa841948725609249f8aac1']} </p>
+    <p><strong>Hora de llegada del técnico: </strong> @{outputs('Get_response_details')?['body/r8591a8a8c5f34e6f99a3124a46e28e51']}</p>
+</div>
+  <div class="section">
+    <div class="section-title">POR QUIEN PREGUNTAR</div>
+    <p><strong>Nombre del usuario: </strong>@{outputs('Get_response_details')?['body/re44d810518ce4c899b8f90be4912edd3']} </p>
+  </div>
+  <div class="section">
+    <div class="section-title">DATOS DE LA EMPRESA Y DÓNDE LLEGAR</div>
+    <p><strong>Empresa:</strong> @{outputs('Get_response_details')?['body/r34cac177960e4955bc7178f6fd2c7613']}</p>
+    <p><strong>Ciudad: </strong>@{outputs('Get_response_details')?['body/r1dbd55e53a344784ad6e0619a7106c17']} </p>
+    <p><strong>Dirección:</strong> @{outputs('Get_response_details')?['body/r1946c9a18df046d6867d12889c376da7']}</p>
+  </div>
+  <div class="section">
+    <div class="section-title">DATOS DEL TÉCNICO</div>
+    <p><strong>Nombre del técnico:</strong> @{outputs('Get_response_details')?['body/rafa6b537bc5e40fb97dc6aa57e5ddb56']}</p>
+    <p><strong>Cédula del técnico:</strong> @{outputs('Get_response_details')?['body/rb5a482e764ee4b219879e73affa5293e']}</p>
+  </div>
+</div>
+</body>
+</html>

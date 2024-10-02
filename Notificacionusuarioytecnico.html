@@ -1,0 +1,109 @@
+<!-- <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Información del Servicio</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  .header { background: #ffffff; padding: 10px; text-align: center; }
+  .content { margin: 20px; text-align: center; }
+  .section { 
+    background-color: #ffffff; /* Color gris claro para el fondo */
+    margin-bottom: 20px; 
+    padding: 20px; /* Espaciado interno para separar el contenido de los bordes del recuadro */
+    border-radius: 10px; /* Bordes redondeados para el recuadro */
+  }
+  .section-title { font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #f76300;}
+  h1 {
+    color: #200075;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <img src="https://tecolsoft.com/wp-content/uploads/2022/09/logo-nuevo-1920x478.png" alt="Logo de la Empresa" width="100">
+</div>
+<div class="content">
+  <h1>Información del Servicio</h1>
+  <div class="section">
+    <div class="section-title">DATOS DEL CASO</div>
+    <p><strong>Número del caso:</strong> @{outputs('Obtener_los_detalles_de_la_respuesta')?['body/ra8ea46f999194cf585a08bda0f99bd81']}</p>
+    <p><strong>Descripción del caso:</strong> @{outputs('Obtener_los_detalles_de_la_respuesta')?['body/raeb9ccff94e04ff0b59b00b5f33a1ea1']}</p>
+    <p><strong>Fecha de servicio:</strong> @{outputs('Obtener_los_detalles_de_la_respuesta')?['body/rc8592c458aa841948725609249f8aac1']}</p>
+    <p><strong>Hora de llegada del técnico:</strong> @{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r8591a8a8c5f34e6f99a3124a46e28e51']}</p>
+  </div>
+  <div class="section">
+    <div class="section-title">POR QUIEN PREGUNTAR</div>
+    <p><strong>Nombre del usuario:</strong> @{outputs('Obtener_los_detalles_de_la_respuesta')?['body/re44d810518ce4c899b8f90be4912edd3']}</p>
+  </div>
+  <div class="section">
+    <div class="section-title">DATOS DE LA EMPRESA Y DÓNDE LLEGAR</div>
+    <p><strong>Empresa:</strong> @{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r34cac177960e4955bc7178f6fd2c7613']}</p>
+    <p><strong>Ciudad:</strong> @{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r1dbd55e53a344784ad6e0619a7106c17']}</p>
+    <p><strong>Dirección:</strong> @{outputs('Crear_elemento')?['body/Direcci_x00f3_n']}</p>
+  </div>
+  <div class="section">
+    <div class="section-title">DATOS DEL TÉCNICO</div>
+    <p><strong>Nombre del técnico:</strong> @{outputs('Obtener_los_detalles_de_la_respuesta')?['body/rafa6b537bc5e40fb97dc6aa57e5ddb56']}</p>
+    <p><strong>Cédula del técnico:</strong> @{outputs('Obtener_los_detalles_de_la_respuesta')?['body/rb5a482e764ee4b219879e73affa5293e']}</p>
+  </div>  
+  <div class="section">
+    <div class="section-title">ENLACES PARA LLENAR LAS ACTAS</div>
+    <p>Para completar el acta del servicio, por favor sigue el siguiente enlace: <a href="https://forms.office.com/r/6d6sN4RYs0">ACTA DE SERVICIO DIGITAL</a></p>
+    <p>Si aplica mantenimiento preventivo llenar el siguiente formulario: <a href="https://forms.office.com/r/E7yY0azM75">ACTA DE SERVICIO DE MANTENIMIENTO PREVENTIVO DIGITAL</a></p>
+  </div>
+</div>
+</body>
+</html> -->
+
+
+
+<!--
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Se asigna técnico en sitio</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  .header { background: #ffffff; padding: 10px; text-align: center; }
+  .content { margin: 20px; text-align: center; }
+  .section { 
+    background-color: #ffffff; /* Color gris claro para el fondo */
+    margin-bottom: 20px; 
+    padding: 20px; /* Espaciado interno para separar el contenido de los bordes del recuadro */
+    border-radius: 10px; /* Bordes redondeados para el recuadro */
+  }
+  .section-title { font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #ec5904; }
+  h1{
+    color: #09005e;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <img src="https://tecolsoft.com/wp-content/uploads/2022/09/logo-nuevo-1920x478.png" alt="Logo de la Empresa" width="100">
+</div>
+<div class="content">
+  <h1>Se asigna técnico en sitio</h1>
+  <div class="section">
+    <div class="section-title">DATOS DEL CASO</div>
+    <p><strong>Número del caso:</strong> [Número aquí]</p>
+    <p><strong>Descripción del caso:</strong> [Descripción aquí]</p>
+    <p><strong>Fecha de servicio:</strong> [Fecha aquí]</p>
+    <p><strong>Hora de llegada del técnico:</strong> [Hora aquí]</p>
+  </div>
+  <div class="section">
+    <div class="section-title">DATOS DEL TÉCNICO</div>
+    <p><strong>Nombre del técnico:</strong> [Nombre aquí]</p>
+    <p><strong>Cédula del técnico:</strong> [Cédula aquí]</p>
+  </div>
+  <div class="section">
+    <div class="section-title">DATOS DE LA EMPRESA Y DÓNDE LLEGAR</div>
+    <p><strong>Empresa:</strong> [Empresa aquí]</p>
+    <p><strong>Ciudad:</strong> [Ciudad aquí]</p>
+    <p><strong>Dirección:</strong> [Dirección aquí]</p>
+  </div>
+</body>
+</html> -->

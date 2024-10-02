@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>Programación de Mantenimientos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f3f3f3;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto;
+            width: 500px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Estilo para hacer la tabla responsiva */
+        .table-container {
+            width: 100%;
+            overflow-x: auto; /* Permite el desplazamiento horizontal en pantallas pequeñas */
+            margin-top: 20px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px; /* Ancho mínimo para mantener la tabla legible */
+        }
+
+        .table th, .table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .status {
+            font-weight: normal;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .status.active {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .status.inactive {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .technician {
+            margin-top: 5px;
+            padding: 20px;
+            text-align: left;
+            color: #333;
+            font-weight: normal;
+            background-color: #ffffff;
+            border-radius: 5px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .importante {
+            margin-top: 5px;
+            padding: 20px;
+            text-align: left;
+            color: #333;
+            font-weight: normal;
+            background-color: #ffffff;
+            border-radius: 5px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .infoservicio {
+            margin-top: 5px;
+            padding: 20px;
+            text-align: left;
+            color: #333;
+            font-weight: normal;
+            background-color: #ffffff;
+            border-radius: 5px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+<div class="container">
+        <!-- Logo de la empresa -->
+        <img class="logo" alt="Logo de Tecolsoft" src="https://tecolsoft.com/wp-content/uploads/2022/09/logo-nuevo-1920x478.png">
+        <h1>Programación de Mantenimientos de Equipos</h1>
+</div>
+<!--Información del servicio-->
+<div class="infoservicio">
+    <h1>Información del servicio</h1>
+    <p>Estado: <strong><span class="status active">@{triggerBody()?['Estado']?['Value']}</span></strong></p>
+    <p>Caso: <strong>@{triggerBody()?['CASO']}</strong></p>
+    <p>Cliente: <strong>@{triggerBody()?['Cliente']?['Value']}</strong></p>
+    <p>Ciudad: <strong>@{triggerBody()?['Ciudad']?['Value']}</strong></p>
+    <p>Dirección: <strong>@{triggerBody()?['Direcci_x00f3_n']}</strong></p>
+    <h1>Información del mantenimiento</h1>
+    <p>Inicio del Mantenimiento: <strong>@{body('Convertir_la_zona_horaria_Inicio')}</strong></p>
+    <p>Fin del Mantenimiento: <strong>@{body('Convertir_la_zona_horaria_Fin')}</strong></p>
+    <p>Laptops: <strong>@{triggerBody()?['Cantidaddelaptops']}</strong></p>
+    <p>Escritorios <strong>@{triggerBody()?['Cantidaddeequiposdeescritorio']}</strong></p>
+    <p>Servidores: <strong>@{triggerBody()?['CantidaddeServidores']}</strong></p>
+    <p>Impresoras: <strong>@{triggerBody()?['Cantidaddeimpresoras']}</strong></p>
+    <p>Racks: <strong>@{triggerBody()?['Cantidadderacks']}</strong></p>
+    
+</div>
+<!-- Información del técnico -->
+<div class="technician">
+    <h1>Información del técnico</h1>
+    <p>Nombre del técnico: <strong>@{triggerBody()?['Nombredelt_x00e9_cnico']?['Value']}</strong></p>
+    <p>Cedula: <strong>@{triggerBody()?['Cedula']?['Value']}</strong></p>
+</div>
+
+        <!-- Información adicional -->
+        <div class="footer">
+            <p>Esta programación está sujeta a cambios.</p>
+            <p>Agradecemos su comprensión y atención a estos detalles.</p>
+            <p>Para cualquier solicitud o caso, puede contactarnos a través de nuestro sitio web <a href="https://tecolsoft.com">tecolsoft.com</a> o al correo electrónico: <a href="mailto:ayuda@tecolsoft.com">ayuda@tecolsoft.com</a>.</p>
+        </div>      
+    </div>
+</body>
+</html>

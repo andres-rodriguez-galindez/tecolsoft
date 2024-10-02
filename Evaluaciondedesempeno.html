@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .table-container {
+            margin-top: 1px;
+            margin-left: 70px;
+            margin-right: 70px;
+            overflow: auto;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            page-break-inside: avoid;
+        }
+        th
+        {
+            text-align: left;
+            padding: 5px;
+            color: rgb(255, 255, 255);
+            background: #040159;
+            border: 0.5px solid rgb(255, 255, 255);
+        }        
+        td {
+            text-align: left;
+            padding: 5px;
+            color: rgb(2, 2, 2);
+            border: 0.5px solid rgb(255, 255, 255);
+        }
+
+        .advertencia,
+        .descriodocutme {
+            text-align: center;
+            font-size: 10px;
+            background-color: #ffffff;
+        }
+
+        .texcenter {
+            text-align: center;
+            background-color:#040159;
+            color: rgb(255, 255, 255);
+        }
+
+        p {
+            color: rgb(0, 0, 0);
+            overflow-wrap: break-word;
+            word-break: break-all;
+            font-weight: normal;
+        }
+        @media print {
+            /* Ajustar tamaño de fuente y espaciado para caber en una sola hoja */
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 10pt; /* Tamaño de fuente más pequeño para ajustar contenido */
+                width: 100%;
+            }
+        }
+.firma{
+    padding: 20px;
+    height: 10%;
+    font-weight: bold;
+}
+li{
+    text-align: justify;
+}
+        
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th class="texcenter" rowspan="3" style="color: #ff6600; font-size: 22px;">TECOLSOFT TIS S.A.S.</th>
+                <th colspan="2" class="texcenter">Proceso: Gestión administrativo</th>
+                <th colspan="2" class="texcenter">Tipo de proceso: Apoyo</th>
+            </tr>
+            <tr>
+                <th colspan="4" class="texcenter"> EVALUACIÓN DE DESEMPEÑO Y COMPETENCIAS - OPERACIÓN ADMINISTRATIVOS
+                </th>
+            </tr>
+            <tr>
+                
+                <th class="texcenter">Fecha de actualización: 21/03/2024</th>
+                <th class="texcenter">Versión: 02</th>
+                <th class="texcenter">Codigo: FOR-GA-005</th>
+                <th class="texcenter">Nivel de confidencial: Confidencial</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <tr>
+                <th class="texcenter" colspan="4">DATOS DE LA EVALUACIÓN</th>
+            </tr>
+            <tr>
+                <th>Fecha de la evaluación:</th>
+                <td>{fechaevaluacion}</td>
+                <td rowspan="7">
+                    <p>Tenga presente que la calificación, esta enfocada a las competencias que desarrolla el
+                        trabajador,</p>
+                    <p>Marque del 1 a 5 el número que refleja su opinión.</p>
+                    <p>Antes de iniciar la evaluación del personal al cargo, lea bien las instrucciones, si tiene duda
+                        consulte con el personal responsable del departamento de Gestión Humana.</p>
+                    <li>Lea bien el contenido de la competencia y comportamiento a evaluar.</li>
+                    <li>De forma objetiva y de manera consiente asigne el puntaje correspondiente</li>
+                    <li>Recuerde que cada puntaje corresponde a un nivel que va de Muy Bajo a Muy Alto.</li>
+                    <li>Muy Bajo = 1 (inferior) Rendimiento laboral no aceptable</li>
+                    <li>Bajo = 2 (Inferior al promedio) Rendimiento laboral regular</li>
+                    <li>Moderado = 3 (Promedio) Rendimiento laboral Bueno</li>
+                    <li>Alto = 4 (Superior al promedio) Rendimiento laboral muy bueno</li>
+                    <li>Muy Alto = 5 (Superior) Rendimiento laboral excelente</li>
+                </td>
+            </tr>
+            <tr>
+                <th>Nombre del técnico:</th>
+                <td>{Nombretecnico}</td>
+            </tr>
+            <tr>
+                <th>Area del técnico:</th>
+                <td>Tecnología de la información</td>
+            </tr>
+            <tr>
+                <th>Cargo del tecnico:</th>
+                <td>{cargodeltecnico}</td>
+            </tr>
+            <tr>
+                <th>Fecha de ingreso del técnico:</th>
+                <td>{fechaingresotecnico}</td>
+            </tr>
+            <tr>
+                <th>Nombre del evaluador (Jefe inmediato):</th>
+                <td>{nombrejefe}</td>
+            </tr>
+            <tr>
+                <th>Cargo del jefe inmediato:</th>
+                <td>{cargojefe}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th class="texcenter" colspan="3">COMPETENCIAS</th>
+            </tr>
+            <tr>
+                <th rowspan="4">Acompañamiento al cliente (AC)</th>
+                <td>Responde apropiadamente</td>
+                <td>{calificacionuno}</td>
+            </tr>
+            <tr>
+                <td>Se compromete personalmente</td>
+                <td>{calificaciondos}</td>
+            </tr>
+            <tr>
+                <td>Resuelve las necesidades de fondo</td>
+                <td>{calificaciontres}</td>
+            </tr>
+            <tr>
+                <td>Da valor agregado</td>
+                <td>{calificacioncuatro}</td>
+            </tr>
+            <tr>
+                <th rowspan="4">Compromiso con los resultados (CR)</th>
+                <td>Quiere trabajar correctamente</td>
+                <td>{calificacioncinco}</td>
+            </tr>
+            <tr>
+                <td>Establece sus estándares</td>
+                <td>{calificacionseis}</td>
+            </tr>
+            <tr>
+                <td>Mejora el rendimiento y consigue resultados</td>
+                <td>{calificacionsiete}</td>
+            </tr>
+            <tr>
+                <td>Fija y trabaja para alcanzar objetivos retadores</td>
+                <td>{calificacionocho}</td>
+            </tr>
+            <tr>
+                <th rowspan="4">Conocimiento organizacional (CO)</th>
+                <td>Reconoce la estructura formal</td>
+                <td>{calificacionnueve}</td>
+            </tr>
+            <tr>
+                <td>Comprende el clima y la cultura</td>
+                <td>{calificaciondiez}</td>
+            </tr>
+            <tr>
+                <td>Identifica las relaciones de influencia</td>
+                <td>{calificaciononce}</td>
+            </tr>
+            <tr>
+                <td>Interpreta asuntos de fondo</td>
+                <td>{calificaciondoce}</td>
+            </tr>
+
+            <tr>
+                <th rowspan="4">Profundización en la información (PI)</th>
+                <td>Pregunta</td>
+                <td>{calificaciontrece}</td>
+            </tr>
+            <tr>
+                <td>Hace trabajo de investigación</td>
+                <td>{calificacioncatorse}</td>
+            </tr>
+            <tr>
+                <td>Profundiza en el tema</td>
+                <td>{calificacionquince}</td>
+            </tr>
+            <tr>
+                <td>Usa sistemas de información propios</td>
+                <td>{calificaciondieciseis}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th class="texcenter">Comentarios de mejora</th>
+            </tr>
+            <tr>
+                <td>{mejoras}</td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th class="texcenter">IMPORTANTE</th>
+            </tr>
+            <tr>
+                <td class="descriodocutme">
+                    <p>
+                        <li>Por cada llamado de atención se resta 0.01 decimales al puntaje promedio total</li>
+                        <li>Por cada dia de suspensión se resta 0.05 decimales al puntaje promedio total</li>
+                        <li>Por cada llamado de felicitaciones se suma 1.00 al puntaje promedio total</li>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="table-container">
+        <div class="firma">
+            <table>
+                <tr>
+                    <td>{nombrejefe} _____________</td>    
+                    <td>Andres Rodriguez _____________</td>       
+                </tr>
+                <tr>
+                    <td>{cargojefe}</td>
+                    <td>Jefe de TI</td>
+                </tr>   
+            </table>
+        </div>
+        
+    </div>
+</body>
+</html>

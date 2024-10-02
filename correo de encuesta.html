@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resumen de Encuesta</title>
+<style>
+    body { font-family: Arial, sans-serif; }
+    .container { width: 100%; max-width: 600px; margin: auto; padding: 20px; box-sizing: border-box; }
+    .header { background-color: #f2f2f2; padding: 10px; text-align: center; }
+    .section { margin-bottom: 20px; }
+    .section h2 { font-size: 18px; color: #333; }
+    .section p { margin: 5px 0; }
+    .bold { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background-color: #f2f2f2; }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Resumen de Encuesta</h1>
+    </div>
+
+    <div class="section">
+        <h2>Número de caso atendido:</h2>
+        <p>@{body('Get_response_details')?['r0011db324675480aa2dabb12de314cb1']}</p>
+    </div>
+
+    <div class="section">
+        <h2>Velocidad de entrega del servicio:</h2>
+        <p>@{body('Get_response_details')?['r7be20ba146bf42f1b32e035f9821e5ae']}</p>
+    </div>
+
+    <div class="section">
+        <h2>Calidad del servicio recibido:</h2>
+        <p>@{body('Get_response_details')?['r67b960e8a27248d28cb127232a24c8c3']}</p>
+    </div>
+
+    <div class="section">
+        <h2>¿Quedó satisfecho con la resolución de su problema o solicitud?</h2>
+        <p>@{body('Get_response_details')?['rdd991248ad0048a7832287ceb426e629']}</p>
+    </div>
+
+    <div class="section">
+        <h2>¿Se le mantuvo informado adecuadamente sobre el estado de sus solicitudes de servicio?</h2>
+        <p></p>
+    </div>
+
+    <div class="section">
+        <h2>¿Qué aspectos del servicio considera que podrían mejorar?</h2>
+        <p>@{body('Get_response_details')?['r1d24d0049b9c4bd6a6f6c0550f722e4e']}</p>
+    </div>
+
+    <div class="section">
+        <h2>¿Recomendaría nuestro servicio a otras empresas o colegas?</h2>
+        <p>@{body('Get_response_details')?['rfe7aa86739e1411089e539c0196a1b18']}</p>
+    </div>
+</div>
+</body>
+</html>
+

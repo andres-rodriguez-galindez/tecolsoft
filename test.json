@@ -1,0 +1,184 @@
+{
+    "caso": "@{body('Obtener_los_detalles_de_la_respuesta')?['r263290eeff7d472ea0009e1e365203d9']}",
+    "empresa": "@{body('Obtener_los_detalles_de_la_respuesta')?['r25ca62b96a4a40109c42bb0798cdc606']}",
+    "fechasol": "@{body('Obtener_los_detalles_de_la_respuesta')?['r6acd38ae7122483098e217b00cddc1fd']}",
+    "nombreuser": "@{body('Obtener_los_detalles_de_la_respuesta')?['r33d2270f97d0457596fd55d7b6303fb8']}",
+    "mailuno": "@{body('Obtener_los_detalles_de_la_respuesta')?['raec7cd3559d7424297e452c28b0f8a91']}",
+    "direccion": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r3d0877b6ca334a27a6231b6de984afc0']}",
+    "ciudad": "@{body('Obtener_los_detalles_de_la_respuesta')?['r7e7915a80e934ea490df885f736a487c']}",
+    "nombretec": "@{body('Obtener_los_detalles_de_la_respuesta')?['rfa699647c32d4c8bb1d18f2b952229e8']}",
+
+    "nombreequi": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r91ae7804de9a462eafc3e93a3a813e8e']}",
+    "etiquetaequi": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r39858985cd374f1fbe7e5099afc83b98']}",
+    "marcaequi": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/rc417532996734c10921596843d2b7767']}",
+    "molequi": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r0cb714161c66451191515b70b4478d32']}",
+    "serialequibios": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r7cfb3c3f457748e2b4c08924aa1815bf']}",
+    
+    "nombrecliente": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r33d2270f97d0457596fd55d7b6303fb8']}",
+    "cedulaclien": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r5ec82941055b4df8a7551608143f0cad']}",
+    "cedulatec": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r4df5e4c1db904570b05fac2f6db52a00']}",
+
+    "cargousuario":"",
+    "areaequipo":"",
+    "tipoequipo":"",
+    "estadoequipo":"",
+    "adquisicionequipo":"",
+    "dominioequipo":"",
+    "procesadorequipo":"",
+    "memoriaramequi":"",
+    "tiporamequipo":"",
+    "discoduroequipo":"",
+    "espaciodisco":"",
+    "tipodediscoequipo":"",
+    "sisteequipo":"",
+    "versionsisequipo":"",
+    "nomantivequipo":"",
+    "verantivirus":"",
+    "descripaplicativos":"",
+
+    "marcamoni":"",
+    "modelomoni":"",
+    "etiqetmon":"",
+    "serialmon":"",
+
+    "marcatecl":"",
+    "modelotecl":"",
+    "etiqettecl":"",
+    "serialtecl":"",
+
+    "marcamou":"",
+    "modelomou":"",
+    "etiqetmou":"",
+    "serialmou":"",
+
+    "marcaimp":"",
+    "modeloimp":"",
+    "etiqetimp":"",
+    "serialimp":"",
+
+    "checklist":"",
+    "cambiosdelequipo":"",
+    "descripcionuno":""
+  }
+
+
+  {
+    "caso": "@{body('Obtener_los_detalles_de_la_respuesta')?['r263290eeff7d472ea0009e1e365203d9']}",
+    "fechasol": "@{body('Obtener_los_detalles_de_la_respuesta')?['r6acd38ae7122483098e217b00cddc1fd']}",
+    "empresa": "@{body('Obtener_los_detalles_de_la_respuesta')?['r25ca62b96a4a40109c42bb0798cdc606']}",
+    "nombreuser": "@{body('Obtener_los_detalles_de_la_respuesta')?['r33d2270f97d0457596fd55d7b6303fb8']}",
+    "mailuno": "@{body('Obtener_los_detalles_de_la_respuesta')?['raec7cd3559d7424297e452c28b0f8a91']}",
+    "ciudad": "@{body('Obtener_los_detalles_de_la_respuesta')?['r7e7915a80e934ea490df885f736a487c']}",
+    "nombretec": "@{body('Obtener_los_detalles_de_la_respuesta')?['rfa699647c32d4c8bb1d18f2b952229e8']}",
+    "direccion": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r3d0877b6ca334a27a6231b6de984afc0']}",
+    "nombreequi": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r91ae7804de9a462eafc3e93a3a813e8e']}",
+    "etiquetaequi": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r39858985cd374f1fbe7e5099afc83b98']}",
+    "marcaequi": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/rc417532996734c10921596843d2b7767']}",
+    "molequi": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r0cb714161c66451191515b70b4478d32']}",
+    "serialequibios": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r7cfb3c3f457748e2b4c08924aa1815bf']}",
+    "nombrecliente": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r33d2270f97d0457596fd55d7b6303fb8']}",
+    "cedulaclien": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r5ec82941055b4df8a7551608143f0cad']}",
+    "cedulatec": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r4df5e4c1db904570b05fac2f6db52a00']}",
+    
+    "cargousuario": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r36c9d789059a4e2798a1d7e507b0671b']}",
+    "areaequipo": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/rb3659511d54a430bb09a24ce85be11c9']}",
+    "tipoequipo": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r5a0a6ba36549492baab6a36187355a9d']}",
+    "estadoequipo": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r582d3da742e04b66880fc09d463763a1']}",
+    "adquisicionequipo": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/rc7228b363c17460fa5712719ab1e5b69']}",
+    "dominioequipo": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r25dcdcf517104688a8f142b4affd8cc3']}",
+    "procesadorequipo": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/rcfc17c0430364ff6b150a33bf0fd88d3']}",
+    "memoriaramequi": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r634694f4ce5946de8543e68d635a518d']}",
+    "tiporamequipo": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/re727f134443c44fd864319bc15fae40d']}",
+    "discoduroequipo": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/rac3b814a71084cb1856ed6b1b13b863b']}",
+    "espaciodisco": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r4c3c305405b74b4ca8583d9bf2cd3b96']}",
+    "tipodediscoequipo": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r58abbf7d187f43d3b1e44147ace1f722']}",
+    "sisteequipo": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r1c92ee510f514870b1fcfe2efda6a69d']}",
+    "versionsisequipo": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r2ded825453d2481b9b9b3abfa17c5004']}",
+    "nomantivequipo": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/rae1b1d88b22e47f89fcb197f8e7f067f']}",
+    "verantivirus": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r746118d7069c49a8a79cfcd48fad3ac4']}",
+    "descripaplicativos": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/re0a10e504fcb4c308e0a86c085eb1a43']}",
+    "marcamoni": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r332c0e0fd30d46d7829b8561fbc64f6a']}",
+    "modelomoni": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r3cc53712007b4122abc5dabaaf30ecb3']}",
+    "etiqetmon": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r6ddab7e7e4a343b08e3815979fa024a0']}",
+    "serialmon": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r3e873962cab149b28ca743b9e7134bf5']}",
+    "marcatecl": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/re41b87bd3ed34368b6ca9893a006954c']}",
+    "modelotecl": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/rfa4a9471752c4a05a46965963cd0bf72']}",
+    "etiqettecl": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r88726bbd12c14efdb987aa72c7e5adeb']}",
+    "serialtecl": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r28b569053595405c9a14a3b02953b7f0']}",
+    "marcamou": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/rad57fa49a2f549bd83b60164f410e806']}",
+    "modelomou": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r0b89bf3d8c014ac49e9f7b6d9db9307d']}",
+    "etiqetmou": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r1040e391b31c476c8f248c8037dcd3bf']}",
+    "serialmou": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r54c0870f45904427bd87bc5e91bae70d']}",
+    "marcaimp": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/rf87fcc6615834f6fa2d86c220a40cc4a']}",
+    "modeloimp": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r6c0dc8a3349b4535b9a75a8f36fc1600']}",
+    "etiqetimp": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/ra32ccd5571574e548f001357be63d85c']}",
+    "serialimp": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/rf03b35878dc84ac9814b94f421d6f7fb']}",
+    "checklist": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r7f52aa03ef8a4278bda2445c7abb8f54']}",
+    "cambiosdelequipo": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/rb0b1f6769fc44bda9084be97042978fe']}",
+    "descripcionuno": "@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r88bb1943b3dd48d599d1c1338071d0ca']}"
+  }
+
+  replace(outputs('Obtener_contenido_de_share')?['body'],'{caso}',variables('Objeto')?['caso'])
+
+replace(outputs('cedulatec')?['body'],'{cargousuario}',variables('Objeto')?['cargousuario'])
+replace(outputs('cargousuario')?['body'],'{areaequipo}',variables('Objeto')?['areaequipo'])
+replace(outputs('areaequipo')?['body'],'{tipoequipo}',variables('Objeto')?['tipoequipo'])
+replace(outputs('tipoequipo')?['body'],'{estadoequipo}',variables('Objeto')?['estadoequipo'])
+replace(outputs('estadoequipo')?['body'],'{adquisicionequipo}',variables('Objeto')?['adquisicionequipo'])
+replace(outputs('adquisicionequipo')?['body'],'{dominioequipo}',variables('Objeto')?['dominioequipo'])
+replace(outputs('dominioequipo')?['body'],'{procesadorequipo}',variables('Objeto')?['procesadorequipo'])
+replace(outputs('procesadorequipo')?['body'],'{memoriaramequi}',variables('Objeto')?['memoriaramequi'])
+replace(outputs('memoriaramequi')?['body'],'{tiporamequipo}',variables('Objeto')?['tiporamequipo'])
+replace(outputs('tiporamequipo')?['body'],'{discoduroequipo}',variables('Objeto')?['discoduroequipo'])
+
+replace(outputs('discoduroequipo')?['body'],'{espaciodisco}',variables('Objeto')?['espaciodisco'])
+
+replace(outputs('espaciodisco')?['body'],'{tipodediscoequipo}',variables('Objeto')?['tipodediscoequipo'])
+
+replace(outputs('tipodediscoequipo')?['body'],'{sisteequipo}',variables('Objeto')?['sisteequipo'])
+
+replace(outputs('sisteequipo')?['body'],'{versionsisequipo}',variables('Objeto')?['versionsisequipo'])
+
+replace(outputs('versionsisequipo')?['body'],'{nomantivequipo}',variables('Objeto')?['nomantivequipo'])
+
+replace(outputs('nomantivequipo')?['body'],'{verantivirus}',variables('Objeto')?['verantivirus'])
+
+replace(outputs('verantivirus')?['body'],'{descripaplicativos}',variables('Objeto')?['descripaplicativos'])
+
+replace(outputs('descripaplicativos')?['body'],'{marcamoni}',variables('Objeto')?['marcamoni'])
+
+replace(outputs('marcamoni')?['body'],'{modelomoni}',variables('Objeto')?['modelomoni'])
+
+replace(outputs('modelomoni')?['body'],'{etiqetmon}',variables('Objeto')?['etiqetmon'])
+
+replace(outputs('etiqetmon')?['body'],'{serialmon}',variables('Objeto')?['serialmon'])
+
+replace(outputs('serialmon')?['body'],'{marcatecl}',variables('Objeto')?['marcatecl'])
+
+replace(outputs('marcatecl')?['body'],'{modelotecl}',variables('Objeto')?['modelotecl'])
+
+replace(outputs('modelotecl')?['body'],'{etiqettecl}',variables('Objeto')?['etiqettecl'])
+
+replace(outputs('etiqettecl')?['body'],'{serialtecl}',variables('Objeto')?['serialtecl'])
+
+replace(outputs('serialtecl')?['body'],'{marcamou}',variables('Objeto')?['marcamou'])
+
+replace(outputs('marcamou')?['body'],'{modelomou}',variables('Objeto')?['modelomou'])
+
+replace(outputs('modelomou')?['body'],'{etiqetmou}',variables('Objeto')?['etiqetmou'])
+
+replace(outputs('etiqetmou')?['body'],'{serialmou}',variables('Objeto')?['serialmou'])
+
+replace(outputs('serialmou')?['body'],'{marcaimp}',variables('Objeto')?['marcaimp'])
+
+replace(outputs('marcaimp')?['body'],'{modeloimp}',variables('Objeto')?['modeloimp'])
+
+replace(outputs('modeloimp')?['body'],'{etiqetimp}',variables('Objeto')?['etiqetimp'])
+
+replace(outputs('etiqetimp')?['body'],'{serialimp}',variables('Objeto')?['serialimp'])
+
+replace(outputs('serialimp')?['body'],'{checklist}',variables('Objeto')?['checklist'])
+
+replace(outputs('checklist')?['body'],'{cambiosdelequipo}',variables('Objeto')?['cambiosdelequipo'])
+
+replace(outputs('cambiosdelequipo')?['body'],'{descripcionuno}',variables('Objeto')?['descripcionuno'])

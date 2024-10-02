@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* .imagenlogo {
+            background-color: white;
+
+        } */
+        th {
+            background-color: rgb(13, 0, 70);
+            color: white;
+            padding: 5px 10px;
+            /* border: 0.5px solid rgb(255, 255, 255); */
+
+        }
+        tr, td{
+            /* border: 0.5px solid rgb(215, 10, 10); */
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 5px 10px;
+        }
+        table{
+        /* border: 0.5px solid rgb(218, 12, 12);*/
+            justify-content: center;
+            width: 100%;
+            /* margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto; */
+            /* width: 100%; */
+            /* box-sizing: border-box; */
+            /* margin: 0; */
+            /* padding: 1%;*/
+        }
+        @media print {
+        body {
+        font-size: 12px; /* Reducir tamaño de fuente */
+        line-height: 0; /* Reducir el interlineado */
+        margin: 0;
+        padding: 0.5cm;  /*Reducir márgenes */
+}
+}
+    .texjust{
+        text-align: justify;
+}
+    .firma2{
+        text-align: start;
+        border-bottom: 0.5px solid rgb(0, 0, 0);
+    }
+
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>TECOLSOFT TIS SAS</th>
+            <th colspan="2">PROCESO: GESTIÓN DE CALIDAD</th>
+            <th colspan="2">TIPO DE PROCESO: ESTRATÉGICO</th>
+        </tr>
+        <tr>
+            <th colspan="5">ENCUESTA DE SATISFACCIÓN DEL CLIENTE</th>
+            </tr>
+        <tr>
+            <th>DATOS</th>
+            <th>FECHA DE ACTUALIZACIÓN:<span><p>02/08/2024</p></span></th>
+            <th>VERSIÓN:<span><p>2</p></span></th>
+            <th>CODIGO:<span><p>FOR-GC-028</p></span></th>
+            <th>NIVEL DE CONFIDENCIALIDAD:<span><p>CONFIDENCIAL</p></span></th>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td colspan="2">{nomcliente}</td>
+                <th>Fecha</th>
+                <td>{fechcreacion}</td>
+                </tr>
+                <tr>
+                <th>Empresa</th>
+                <td colspan="2">{emcliente}</td>
+                <th>Ciudad</th>
+                <td>{ciudad}</td>
+                </tr>
+            <tr>
+                <th>Areá en la que se presto el servicio</th>
+                <td colspan="2">Tecnología de la información (TI)</td>
+                <th>Cargo</th>
+                <td>{cargo}</td>
+                </tr>
+            <tr>
+                <th class="texjust" colspan="3">1. En general qué tan satisfecho está con nuestra empresa</th>
+                <td colspan="2">{respreguntauno}</td>
+            </tr>
+            <tr>
+                <th class="texjust" colspan="3">2. ¿Cubren nuestros servicios su necesidades?</th>
+                <td colspan="2">{respreguntados}</td>
+            </tr>
+            <tr>
+                <th class="texjust" colspan="3">3. ¿Cómo calificaría la calidad de nuestro servicio?</th>
+                <td colspan="2">{respreguntatres}</td>
+            </tr>
+            <tr>
+                <th class="texjust" colspan="3">4. ¿Cómo hemos respondido a sus preguntas e inquietudes durante nuestros servicios?</th>
+                <td colspan="2">{respreguntacuatro}</td>
+            </tr>
+            <tr>
+                <th class="texjust" colspan="3">5. ¿Volvería a usar nuestros servicios en un futuro?</th>
+                <td colspan="2">{respreguntaquinta}</td>
+            </tr>
+            <tr>
+                <th class="texjust" colspan="3">6. ¿Recomendaría usted nuestra empresa?</th>
+                <td colspan="2">{respreguntasexta}</td>
+            </tr>
+            <tr>
+                <th class="texjust" colspan="3">7. ¿Le agrada la manera en que le contestan y resuelven sus dudas en Tecolsoft?</th>
+                <td colspan="2">{respreguntaseptima}</td>
+            </tr>
+            <tr>
+                <th class="texjust" colspan="3">8. ¿Esta conforme con la presentación de los informes que solicita? ¿Qué le gustaría mejorar?</th>
+                <td colspan="2">{respreguntaoctava}</td>
+            </tr>
+            <tr>
+                <th class="texjust" colspan="3">9. Si ha realizado visitas a la empresa, ¿Cómo lo atendieron? ¿le ofrecieron alguna bebida?</th>
+                <td colspan="2">{respreguntanovena}</td>
+            </tr>
+            <tr>
+                <th class="texjust" colspan="3">10. ¿Cómo han sido los tiempos de respuesta en procesos de solicitudes de tipo administrativo?</th>
+                <td colspan="2">{respreguntadiez}</td>
+            </tr>
+            <tr>
+                <th class="texjust" colspan="3">11. ¿Se han dado soluciones a sus PQRSF?</th>
+                <td colspan="2">{respreguntaonce}</td>
+            </tr>
+            <tr>
+                <th class="texjust" colspan="3">12. ¿Qué le gustaría que mejoraramos en la prestación de nuestros servicios?</th>
+                <td colspan="2">{respreguntadoce}</td>
+            </tr>
+            <tr>
+                <th class="texjust" colspan="3">Observaciones y recomendaciones</th>
+                <td colspan="2">{recomendacionuno}<span>{recomendaciondos}</span></td>
+            </tr>
+            <tr>
+
+            </tr>
+            <tr>
+                <td class="firma2" colspan="2"><b>{nomcliente}</b><span><p><em>Copia controlada de la encuesta</em></span></td>
+                <td class="firma2" colspan="3"><b>Andres Rodriguez</b><span><p><em>Copia controlada de la encuesta</em></span></td>
+            </tr>
+            <tr>
+                <td colspan="2"><b>{cargo}</b></td>
+                <td colspan="3"><b>Jefe de TI</b></td>
+            </tr>
+    </table>
+</body>
+</html>

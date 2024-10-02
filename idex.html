@@ -1,0 +1,128 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<title>Respuestas</title>
+</head>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+.contenedor {
+  width: 500px;
+  background-color: #eeeeee;
+  border-left: 15px solid #43324e;
+  padding: 10px;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 32px;
+  color: #eeeeee;
+  background-color: #43324e;
+  text-transform: uppercase;
+  padding: 15px;
+  font-family: Open Sans Condensed;
+}
+
+.subtitulo {
+  text-align: center;
+  font-size: 25px;
+  color: #43324e;
+  margin-left: 15px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-family: Open Sans Condensed;
+}
+
+.texto {
+  width: 442px;
+  height: 80px;
+  overflow: auto;
+  padding: 12px;
+  font-size: 13px;
+  color: #000;
+  background: #dbdbdb;
+  margin-left: 15px;
+  border-right: solid 5px #644b74;
+  text-align: justify;
+}
+
+</style>
+<body>
+<div class="contenedor">
+  <div class="titulo">Cuestionario Alejandro</div>
+  <div class="subtitulo">Nombre</div>
+  <div class="texto">
+{Nombre}
+
+ </div><div class="subtitulo">¿Consideras que el temario ha sido comprensible? </div>
+  <div class="texto">
+    {Opinion1}
+</div><div class="subtitulo">¿Como valoras los ejercicios del curso?</div>
+  <div class="texto">
+{Opinion2}
+</div><div class="subtitulo">¿ Como valoras los ejercicios y dinámicas del docente?</div>
+  <div class="texto">
+    {Opinion3}
+
+
+</div>
+</body> -->
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+.table-container {
+            margin-top: 10px;
+            margin-left: 5px;
+            margin-right: 5px;
+            overflow: auto;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 12px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            width: 100%;
+            border-collapse: collapse;
+        }
+table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+th, td {
+            border: 0.5px solid rgb(255, 255, 255);
+            text-align: left;
+            padding: 8px;
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 3, 179);            
+        }
+img{
+ width: 150px;
+ height: 50px;
+        }
+</style>
+<body>
+    <div class="table-container">
+       <table>
+        <tr>
+            <th>Cordial saludo, estimado</th>
+            <td>@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r25ca62b96a4a40109c42bb0798cdc606']}</td>
+        </tr>
+        <tr>
+            <th>Se adjunta acta del servicio del caso</th>
+            <td>@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r263290eeff7d472ea0009e1e365203d9']}</td>
+        </tr>
+        <tr>
+            <th>Detalle de la solución</th>
+            <td>@{outputs('Obtener_los_detalles_de_la_respuesta')?['body/rbf00e48bc8b34e08868cc2cdc084ffe4']}</td>
+        </tr>
+       </table>
+    </div>
+    <img src="https://tecolsoft.com/wp-content/uploads/2022/09/logo-nuevo-1920x478.png" alt="tecolsoft">
+</body>
+</html>

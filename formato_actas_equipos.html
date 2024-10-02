@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .table-container {
+            margin-top: 10px;
+            margin-left: 5px;
+            margin-right: 5px;
+            overflow: auto;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            page-break-inside: avoid;
+        }
+
+        th, td{
+            border: 0.5px solid rgb(255, 255, 255);
+            text-align: left;
+            padding: 8px;
+            background-color: rgb(236, 234, 234);
+            color: rgb(0, 0, 0);            
+        }
+       .advertencia, .descriodocutme {
+            text-align: center;
+            font-size: 10px;
+            background-color: #ffffff;
+        }
+        .texcenter{
+            text-align: center;
+            background-color: rgb(13, 0, 70);
+            color: rgb(255, 255, 255);
+        }
+
+        p {
+            color: rgb(0, 0, 0);
+            overflow-wrap: break-word;
+            word-break: break-all;
+            font-weight: normal;
+        }
+        .titulos{
+            text-align: center;
+            background-color:  rgb(13, 0, 70);
+            color: #ffffff;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th rowspan="2" class="texcenter">Tecolsoft</th>
+                <th colspan="2" class="texcenter">Proceso: Prestación del servicio</th>
+                <th colspan="2" class="texcenter">Tipo de proceso: Realización</th>
+            </tr>
+            <tr>
+                <th colspan="4" class="texcenter">ORDEN DE MANTENIMIENTO PREVENTIVO DIGITAL</th>
+            </tr>
+            <tr>
+                <th class="texcenter">S.A.S</th>
+                <th class="texcenter">Fecha de actualización: 13/02/2024</th>
+                <th class="texcenter">Versión: 15</th>
+                <th class="texcenter">Codigo: FOR-PS-002</th>
+                <th class="texcenter">Nivel de confidencial: Confidencial</th>
+            </tr>
+        </table>
+    </div>
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th class="titulos" colspan="4">DATOS DE LA EMPRESA</th>
+                </tr>
+                <tr>
+                    <th>Orden de servicio N°:</th>
+                    <td>{caso}</td>
+                    <th>Nombre de la empresa:</th>
+                    <td>{empresa}</td>
+                </tr>
+                <tr>
+                    <th>Fecha de solicitud:</th>
+                    <td>{fechasol}</td>
+                    <th>Nombre del usuario:</th>
+                    <td>{nombreuser}</td>
+                </tr>
+                <tr>
+                    <th>Correo electrónico:</th>
+                    <td>{mailuno}</td>
+                    <th>Dirección de la sede:</th>
+                    <td>{direc}</td>
+                </tr>
+                <tr>
+                    <th>Ciudad:</th>
+                    <td>{ciudad}</td>
+                    <th>Nombre del Técnico asignado:</th>
+                    <td>{nombretec}</td>
+                </tr>
+                <tr>
+                    <th>Cargo del usuario:</th>
+                    <td>{cargousuario}</td>
+                    <th>Area donde esta el equipo:</th>
+                    <td>{areaequipo}</td>                    
+                </tr>
+            </table>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <tr><th class="titulos">IMPORTANTE</th></tr>
+                <tr>
+                    <th colspan="2" class="descriodocutme"><p>Sr. Usuario, recuerde que Tecolsoft no se hace responsable de la información almacenada en su equipo, por favor realice backup, terminado el mantenimiento, valide con el Técnico el correcto funcionamiento del equipo de cómputo.</p></th>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th class="titulos" colspan="2">DATOS DEL EQUIPO</th>
+                </tr>
+                <tr>
+                    <th>Tipo de equipo:</th>
+                    <td>{tipoequipo}</td>
+                </tr>
+                <tr>
+                    <th>En que estado se encuentra el equipo:</th>
+                    <td>{estadoequipo}</td>
+                </tr>
+                <tr>
+                    <th>Tipo de adquisición:</th>
+                    <td>{adquisicionequipo}</td>
+                </tr>     
+                <tr>
+                    <th>Nombre del equipo:</th>
+                    <td>{nombreequi}</td>
+                </tr>
+                <tr>
+                    <th>Etiqueta del equipo:</th>
+                    <td>{etiquetaequi}</td>
+                </tr>
+                <tr>
+                    <th>Marca del equipo:</th>
+                    <td>{marcaequi}</td>
+                </tr>
+                <tr>
+                    <th>Modelo del equipo:</th>
+                    <td>{molequi}</td>
+                </tr>
+                <tr>
+                    <th>Serial de la Bios:</th>
+                    <td>{serialequibios}</td>
+                </tr>
+                <tr>
+                    <th>Dominio:</th>
+                    <td>{dominioequipo}</td>
+                </tr>           
+                <tr>
+                    <th class="titulos" colspan="2">CAPIDAD DEL EQUIPO</th>
+                </tr>
+                <tr>
+                    <th>Procesador del equipo:</th>
+                    <td>{procesadorequipo}</td>
+                </tr>
+                <tr>
+                    <th>Tamaño de Memoria Ram:</th>
+                    <td>{memoriaramequi}</td>
+                </tr>
+                <tr>
+                    <th>Tipo de memoria Ram:</th>
+                    <td>{tiporamequipo}</td>
+                </tr>
+                <tr>
+                    <th>Tamaño de disco duro:</th>
+                    <td>{discoduroequipo}</td>
+                </tr>
+                <tr>
+                    <th>Espacio libre en disco:</th>
+                    <td>{espaciodisco}</td>
+                </tr>
+                <tr>
+                    <th>Tipo de disco duro:</th>
+                    <td>{tipodediscoequipo}</td>
+                </tr>
+                <tr>
+                    <th class="titulos" colspan="2">SOFTWARE</th>
+                </tr>
+                <tr>
+                    <th>Sistema Operativo:</th>
+                    <td>{sisteequipo}</td>
+                </tr>
+                <tr>
+                    <th>Versión sistema operativo:</th>
+                    <td>{versionsisequipo}</td>
+                </tr>
+                <tr>
+                    <th>Nombre del antivirus:</th>
+                    <td>{nomantivequipo}</td>
+                </tr>
+                <tr>
+                    <th>Versión antivirus:</th>
+                    <td>{verantivirus}</td>
+                </tr>
+                <tr>
+                    <th colspan="2"> Aplicativos del panel de control
+                        <p>{descripaplicativos}</p>
+                    </th>
+                </tr>
+            </table>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th class="titulos" colspan="2">PERIFERICOS DEL EQUIPO</th>
+                </tr>
+                <tr>
+                    <th>Monitor</th>
+                    <td>Marca: {marcamoni} Modelo: {modelomoni} Etiqueta: {etiqetmon} Serial: {serialmon}</td>
+                </tr>
+                <tr>
+                    <th>Teclado</th>
+                    <td>Marca: {marcatecl} Modelo: {modelotecl} Etiqueta: {etiqettecl} Serial: {serialtecl}</td>
+                </tr>
+                <tr>
+                    <th>Mouse</th>
+                    <td>Marca: {marcamou} Modelo: {modelomou} Etiqueta: {etiqetmou} Serial: {serialmou}</td>
+                </tr>
+                
+                <tr>
+                    <th>Impresora</th>
+                    <td>Marca: {marcaimp} Modelo: {modeloimp} Etiqueta: {etiqetimp} Serial: {serialimp}</td>
+                </tr>
+                <tr>
+                    <th colspan="2">Que se realizo en el equipo:<p>{checklist}</p></th>
+                </tr>
+                <tr>
+                    <th colspan="2">Observaciones y recomendaciones:<p>{cambiosdelequipo}</p><p>{descripcionuno}</p></th>
+                </tr>
+            </table>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th class="titulos">Nombre del cliente</th>
+                    <th class="titulos">Nombre del técnico</th>
+                </tr>
+                <tr>
+                    <th>{nombrecliente}</th>
+                    <th>{nombretec}</th>
+                </tr>                
+            </table>
+        </div>
+        <p class="advertencia">Tecolsoft S.A.S no se hace responsable por pérdida de datos en el equipo revisado.</p>
+            <p class="advertencia">El presente documento es propiedad de TECOLSOFT S.A.S. Queda prohibida su reproducción.</p> 
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!-- <!DOCTYPE html> -->
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #080172;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #f7f7f7;
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 12px;
+        }
+        .footer img {
+            width: 24px;
+            height: 24px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://tecolsoft.com/wp-content/uploads/2022/09/logo-nuevo-1920x478.png" alt="Logo de la Empresa" width="200" height="70">
+        </div>
+        <h2>Hola, @{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r25ca62b96a4a40109c42bb0798cdc606']}</h2>
+        <p>Estamos contentos de informarte que hemos resuelto tu caso. A continuación, encontrarás los detalles:</p>
+        <p><strong>Caso Número:</strong>  @{outputs('Obtener_los_detalles_de_la_respuesta')?['body/r263290eeff7d472ea0009e1e365203d9']}</p>
+        <p><strong>Solución:</strong> @{outputs('Obtener_los_detalles_de_la_respuesta')?['body/rbf00e48bc8b34e08868cc2cdc084ffe4']}</p>
+        <p>Si tienes alguna pregunta o necesitas más información, no dudes en contactarnos.</p>
+        <!-- <div class="footer">
+            Síguenos en nuestras redes sociales:
+            <a href="https://www.facebook.com/tecolsoft"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" width="15" height="15"></a>
+            <a href="https://www.instagram.com/tecolsoft/"><img src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png" alt="Instagram" width="15" height="15"></a>
+            <a href="https://api.whatsapp.com/send?phone=573155436822&text="><img src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png" alt="whatsapp" width="15" height="15"></a>
+        </div> -->
+    </div>
+</body>
+</html>

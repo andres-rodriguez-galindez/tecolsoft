@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificación de Solución de Caso</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 20px;
+            text-align: center;
+        }
+        .header img {
+            max-width: 450px;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            padding: 20px;
+            margin: auto;
+        }
+        .content p {
+            margin: auto 0;
+        }
+        .content .label {
+            font-weight: bold;
+        }
+        .content .solution {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eaf7ea;
+            border-left: 5px solid #4CAF50;
+        }
+        .survey {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .survey p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .survey a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .survey a:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            background-color: #040159;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <img src="https://tecolsoft.com/wp-content/uploads/2022/09/logo-nuevo-1920x478.png" alt="Logo">
+        <h1>NOTIFICACIÓN DE SOLUCIÓN DEL CASO EN SITIO</h1>
+    </div>
+    <div class="content">
+        <p><span class="label">Fecha de Solución:</span> @{body('Convertir_la_zona_horaria')}</p>
+        <p><span class="label">Número de Caso:</span> @{triggerOutputs()?['body/ID']}</p>
+        <p><span class="label">Asunto:</span> @{triggerOutputs()?['body/Title']}</p>        
+        <p><span class="label">Estado:</span> @{triggerOutputs()?['body/Status/Value']}</p>        
+        <!-- Detalles de la solución -->
+        <div class="solution">
+            <p><span class="label">Detalles de la Solución:</span></p>
+            <div>@{triggerOutputs()?['body/SolutionDescription']}</div>
+        </div>        
+        <!-- Comentarios adicionales si los hay -->
+        <!-- <p><span class="label">Comentarios Adicionales:</span> @{triggerOutputs()?['body/AdditionalComments']}</p> -->
+        <!-- Sección de la encuesta de satisfacción -->
+        <div class="survey">
+            <p>Queremos saber tu opinión sobre nuestro servicio. Por favor, completa la siguiente encuesta:</p>
+            <a href="https://forms.office.com/r/vJ1YfKrQGT">Completar Encuesta de Satisfacción</a>
+        </div>
+    </div>
+    <div class="footer">
+        <p><span>Este es un mensaje automático. Por favor, no responda a este correo.</span></p> 
+        <p><span>Horario de atención Lunes a viernes 8:00 am a 5:00 pm, no aplica festivos.</span></p>
+        <p><span>Correo: ayuda@tecolsoft.com</span></p>
+    </div>
+</div>
+</body>
+</html>
