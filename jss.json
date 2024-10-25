@@ -1,0 +1,131 @@
+{
+    "sections": [
+        {
+            "displayname": "🕵️ Resumen del caso",
+            "fields": [
+                "Título"
+            ]
+        },
+        {
+            "displayname": "📖 Detalle del problema",
+            "fields": [
+                "Descripción del problema"
+            ]
+        },
+        {
+            "displayname": "🔄️ Datos del servicio",
+            "fields": [
+                "¿Cual es el tipo de solicitud?",
+                "Responsable Remotamente",
+                "Prioridad",
+                "Areas de tecolsoft",
+                "Servicio con repuesto",
+                "Servicio por garantia"
+            ]
+        },
+        {
+            "displayname": "👩‍💼Datos del cliente",
+            "fields": [
+                "Correo del solicitante",
+                "Nombre del solicitante",
+                "Correo de Jefe del solicitante",
+                "Compañia del solicitante",
+                "¿Ciudad donde se va prestar el servicio?",
+                "Tipo de contrato",
+                "Cedula del solicitante"
+            ]
+        },
+        {
+            "displayname": "💻 Datos del equipo",
+            "fields": [
+                "Nombre del equipo atendido",
+                "Serial del equipo atendido",
+                "Estado fisico del equipo",
+                "Marca del equipo",
+                "Modelo del equipo",
+                "Área donde se encuentra el equipo",
+                "Etiqueta del equipo"
+            ]
+        },
+        {
+            "displayname": "👨‍💻 Datos del Técnico que va ir al sitio",
+            "fields": [
+                "Nombre del técnico en sitio",
+                "Celular del técnico",
+                "Cedula del técnico",
+                "Correo del técnico en sitio"
+            ]
+        },
+        {
+            "displayname": "👩‍💼Dirección donde se va prestar el servicio",
+            "fields": [
+                "Dirección"
+            ]
+        },
+        {
+            "displayname": "🗓️ Fechas",
+            "fields": [
+                "Fecha y hora de atención",
+                "Fecha y hora de asignación del técnico",
+                "Fecha y hora de llegada del técnico",
+                "Fecha y hora de salida del técnico",
+                "Fecha y hora de cierre de la solicitud"
+            ]
+        },
+        {
+            "displayname": "👍 Catálogo",
+            "fields": [
+                "¿Cual es el tipo de servicio?",
+                "¿Cual es el tipo de actividad?",
+                "¿Por que medio le solicitaron el caso?",
+                "¿El caso es facturable?",
+                "¿Cual fue la solución?",
+                "Solución detallada del caso",
+                "Seguimiento",
+                "Recomendaciones"
+            ]
+        },
+        {
+            "displayname": "👍 Cambios de estados",
+            "fields": [
+                "Estado",
+                "Resolución",
+                "¿El caso se soluciono remoto o en sitio?"
+            ]
+        },
+        {
+            "displayname": " ⌛Tiempo Remoto y Sitio Manual",
+            "fields": []
+        },
+        {
+            "displayname": "Elemento",
+            "fields": [
+                "Atención",
+                "Asignación",
+                "Remoto",
+                "Sitio",
+                "Servicio Programado",
+                "Relacion-Mantenimientos",
+                "Relacion de incidencia padre",
+                "Problema registrado por",
+                "Fecha de notificación",
+                "Imágenes",
+                "Fecha de re apertura",
+                "Escalado",
+                "Acta enviada",
+                "Fecha de escalamiento",
+                "¿Tiene algún comentario adicional sobre su experiencia con el servicio?",
+                "¿Se soluciono el caso?",
+                "¿Cómo evaluaría la claridad y efectividad de la comunicación durante el servicio?",
+                "¿Cómo evaluaría la puntualidad del personal?",
+                "¿Cómo calificaría la calidad del trabajo realizado?",
+                "Enviar acta de servicio",
+                "Correo Enviado",
+                "Rechazado",
+                "¿Qué tan satisfecho está con el profesionalismo y la actitud del personal durante el servicio en sitio?",
+                "¿Cómo calificaría su experiencia general con el servicio?",
+                "Origen del problema"
+            ]
+        }
+    ]
+}
