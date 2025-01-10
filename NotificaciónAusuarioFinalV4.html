@@ -1,0 +1,102 @@
+
+
+
+    
+    
+    
+    <title>Notificación de Caso</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 20px;
+            text-align: center;
+        }
+        .header img {
+            max-width: 100%; /*Se realizo cambio de imagen para que se ajuste el tamaño*/ 
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content p {
+            margin: 5px 0;
+        }
+        .content .label {
+            font-weight: bold;
+        }
+        .footer {
+            background-color: #040159;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #ffffff;
+        }
+        h2 {
+            color: #040159;
+        }
+    </style>
+
+
+
+<div class="container">
+    <div class="header">
+        <img src="https://tecolsoft.com/wp-content/uploads/2022/09/logo-nuevo-1920x478.png" alt="Logo">
+        <h1>Notificación de programación del servicio en sitio</h1>
+    </div>
+    <div class="content">
+        <h2>Datos del servicio</h2>
+        <p><span class="label">Fecha de Creación:</span> @{body('Convertir_la_fecha_de_creacion')}</p>
+        <p><span class="label">Número de Caso:</span> @{triggerBody()?['ID']}</p>
+        <p><span class="label">Fecha y hora de atención:</span> @{body('Convertir_la_fecha_de_atención')}</p>
+        <h2>Datos del solicitante</h2>
+        <p><span class="label">Nombre del solicitante:</span>@{triggerBody()?['Nombredelsolicitante']?['Value']} </p>
+        <p><span class="label">Compañia del solicitante:</span> @{triggerBody()?['Compa_x00f1_ia']?['Value']}</p>
+        <p><span class="label">Ciudad:</span> @{triggerBody()?['OData__x00bf_Desdecualciudadprestoelse']?['Value']}</p>
+        <h2>Resumen</h2>
+        <p><span class="label">Asunto:</span> @{triggerBody()?['Title']}</p>        
+        <p><span class="label">Estado:</span> @{triggerBody()?['Status']?['Value']}</p>
+        <h2>Datos del técnico</h2>
+        <p><span class="label">Nombre del técnico en sitio:</span> @{triggerBody()?['Nombredelt_x00e9_cnicoensitio']?['Value']}</p>
+        <p><span class="label">Cedula del técnico:</span> @{triggerBody()?['Ceduladelt_x00e9_cnico']?['Value']}</p>
+        <h2>Herramientas de trabajo</h2>
+        <p>El técnico requeire ingresar lo siguiente:</p>
+        <li><strong>Celular:</strong> Para comunicación y monitoreo del servicio.</li>
+        <li>Brocha.</li>
+        <li>Pasta térmica.</li>
+        <li>Juego de destornilladores.</li>
+        <li>Disco duro externo.</li>
+        <li><strong>USB booteable: </strong>(Win 10 ó Win 11 PRO última versión).</li>
+        <li>Convertidor SATA a USB (galleta) ó PCI a USB.</li>
+        <li>Tester.</li>
+        <li><strong>Herramientas de diagnóstico: </strong>hirens boot, cristal disk, HD centinel, Gabriel topala info PC.</li>
+        <h2>Detalle del servicio</h2>
+        <p><span class="label">Descripción:</span>  @{triggerBody()?['Description']}</p>
+    </div>
+    <div class="footer">
+        <p>Este es un mensaje automático. Por favor, no responda a este correo.</p> 
+        <p>Horario de atención Lunes a viernes 8:00 am a 5:00 pm, no aplica festivos.</p>
+        <p>Correo: ayuda@tecolsoft.com</p>
+    </div>
+</div>
+
+
