@@ -1,204 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <style>
+      body {
+        margin: 0;
+        padding: 5px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 10px; /* Reducimos el tamaño base para ahorrar espacio */
+      }
+
+      .table-container {
+        margin-top: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        overflow: auto;
+        page-break-inside: avoid; /* Evita que las tablas se dividan entre páginas */
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        page-break-inside: avoid;
+      }
+
+      th,
+      td {
+        border: 0.5px solid rgb(255, 255, 255);
+        text-align: left;
+        padding: 4px; /* Reducimos el padding para ahorrar espacio */
+        background-color: rgb(236, 234, 234);
+        color: rgb(0, 0, 0);
+        vertical-align: top; /* Alinea el contenido en la parte superior */
+      }
+
+      .advertencia,
+      .descriodocutme {
+        text-align: center;
+        font-size: 8px; /* Tamaño más pequeño para notas */
+        background-color: #ffffff;
+      }
+
+      .texcenter {
+        text-align: center;
+        background-color: rgb(13, 0, 70);
+        color: rgb(255, 255, 255);
+      }
+
+      p {
+        color: rgb(0, 0, 0);
+        overflow-wrap: break-word;
+        word-break: break-all;
+        font-weight: normal;
+        margin: 0; /* Eliminamos márgenes innecesarios */
+      }
+
+      /* Reglas específicas para impresión */
+      @media print {
+        body {
+          margin: 0;
+          padding: 0;
+        }
         .table-container {
-            margin-top: 10px;
-            margin-left: 5px;
-            margin-right: 5px;
-            overflow: auto;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: 12px;
+          page-break-inside: avoid;
         }
-
         table {
-            width: 100%;
-            border-collapse: collapse;
-            page-break-inside: avoid;
+          page-break-inside: avoid;
         }
-
-        th, td{
-            border: 0.5px solid rgb(255, 255, 255);
-            text-align: left;
-            padding: 8px;
-            background-color: rgb(236, 234, 234);
-            color: rgb(0, 0, 0);            
+        th,
+        td {
+          page-break-inside: avoid;
         }
-       .advertencia, .descriodocutme {
-            text-align: center;
-            font-size: 10px;
-            background-color: #ffffff;
+        /* Aseguramos que el contenido no se corte */
+        @page {
+          size: A4;
+          margin: 5mm;
         }
-        .texcenter{
-            text-align: center;
-            background-color: rgb(13, 0, 70);
-            color: rgb(255, 255, 255);
-        }
-
-        p {
-            color: rgb(0, 0, 0);
-            overflow-wrap: break-word;
-            word-break: break-all;
-            font-weight: normal;
-        }
-        
+      }
     </style>
-</head>
-
-<body>
+  </head>
+  <body>
     <div class="table-container">
-        <table>
-            <tr>
-                <th rowspan="2" class="texcenter">Tecolsoft</th>
-                <th colspan="2" class="texcenter">Proceso: Prestación del servicio</th>
-                <th colspan="2" class="texcenter">Tipo de proceso: Realización</th>
-            </tr>
-            <tr>
-                <th colspan="4" class="texcenter">ORDEN DE SERVICIO DIGITAL</th>
-            </tr>
-            <tr>
-                <th class="texcenter">S.A.S</th>
-                <th class="texcenter">Fecha de actualización: 29/01/2024</th>
-                <th class="texcenter">Versión: 11</th>
-                <th class="texcenter">Codigo: FOR-PS-004</th>
-                <th class="texcenter">Nivel de confidencial: Confidencial</th>
-            </tr>
-        </table>
+      <table>
+        <tr>
+          <th rowspan="2" class="texcenter">Tecolsoft</th>
+          <th colspan="2" class="texcenter">
+            Proceso: Prestación del servicio
+          </th>
+          <th colspan="2" class="texcenter">Tipo de proceso: Realización</th>
+        </tr>
+        <tr>
+          <th colspan="4" class="texcenter">ORDEN DE SERVICIO DIGITAL</th>
+        </tr>
+        <tr>
+          <th class="texcenter">S.A.S</th>
+          <th class="texcenter">Fecha de actualización: 29/01/2024</th>
+          <th class="texcenter">Versión: 11</th>
+          <th class="texcenter">Codigo: FOR-PS-004</th>
+          <th class="texcenter">Nivel de confidencial: Confidencial</th>
+        </tr>
+      </table>
     </div>
 
-        <div class="table-container" >
-            <table>
-                <tr><th class="texcenter" colspan="4">DATOS DEL CLIENTE</th></tr>
-                <tr>
-                    <th>Orden de servicio N°:</th>
-                    <td>{caso}</td>
-                    <th>Nombre de la empresa:</th>
-                    <td>{empresa}</td>
-                </tr>
-                <tr>
-                    <th>Fecha de solicitud:</th>
-                    <td>{fechasol}</td>
-                    <th>Nombre del usuario:</th>
-                    <td>{nombreuser}</td>
-                </tr>
-                <tr>
-                    <th>Fecha de atención:</th>
-                    <td>{fechaate}</td>
-                    <th>Correo electrónico:</th>
-                    <td>{mailuno}</td>
-                </tr>
-                <tr>
-                    <th>Hora de llegada:</th>
-                    <td>{horallegada}</td>
-                    <th>Dirección:</th>
-                    <td>{direc}</td>
-                </tr>
-                <tr>
-                    <th>Hora de salida:</th>
-                    <td>{horasalida}</td>
-                    <th>Ciudad:</th>
-                    <td>{ciudad}</td>
-                </tr>
-                <tr>
-                    <th>Tiempo de solución:</th>
-                    <td>{tiemposol}</td>
-                    <th>Nombre del Técnico asignado:</th>
-                    <td>{nombretec}</td>
-                </tr>
-            </table>
-        </div>
+    <div class="table-container">
+      <table>
+        <tr>
+          <th class="texcenter" colspan="4">DATOS DEL CLIENTE</th>
+        </tr>
+        <tr>
+          <th>Orden de servicio N°:</th>
+          <td>{caso}</td>
+          <th>Nombre de la empresa:</th>
+          <td>{empresa}</td>
+        </tr>
+        <tr>
+          <th>Fecha de solicitud:</th>
+          <td>{fechasol}</td>
+          <th>Nombre del usuario:</th>
+          <td>{nombreuser}</td>
+        </tr>
+        <tr>
+          <th>Fecha de atención:</th>
+          <td>{fechaate}</td>
+          <th>Correo electrónico:</th>
+          <td>{mailuno}</td>
+        </tr>
+        <tr>
+          <th>Hora de llegada:</th>
+          <td>{horallegada}</td>
+          <th>Dirección:</th>
+          <td>{direc}</td>
+        </tr>
+        <tr>
+          <th>Hora de salida:</th>
+          <td>{horasalida}</td>
+          <th>Ciudad:</th>
+          <td>{ciudad}</td>
+        </tr>
+        <tr>
+          <th>Tiempo de solución:</th>
+          <td>{tiemposol}</td>
+          <th>Nombre del Técnico asignado:</th>
+          <td>{nombretec}</td>
+        </tr>
+      </table>
+    </div>
 
-        <div class="table-container">
-            <table>
-                <tr><th class="texcenter">IMPORTANTE</th></tr>
-                <tr>
-                    <th class="descriodocutme"><p>Este documento tiene como objetivo recopilar y registrar la
-                        información necesaria, puntual y verídica para dar una correcta solución a la petición de
-                        servicio. Todo lo que se registre en este documento hará parte del servicio y se entenderá como
-                        un hecho cumplido. Todos los campos son de obligatorio registro. La firma por parte del usuario
-                        dará a entender para ambas partes que la petición del servicio fue solucionada a entera
-                        satisfacción emitiendo o no una solución definitiva de la falla.</p></th>
-                </tr>
-            </table>
-            
-            <table>
-                <tr><th class="texcenter" colspan="2">DATOS DEL EQUIPO</th></tr>
-                <tr>
-                    <th>Nombre del equipo:</th>
-                    <td>{nombreequi}</td>
-                </tr>
-                <tr>
-                    <th>Etiqueta del equipo:</th>
-                    <td>{etiquetaequi}</td>
-                </tr>
-                <tr>
-                    <th>Marca:</th>
-                    <td>{marcaequi}</td>
-                </tr>
-                <tr>
-                    <th>Modelo:</th>
-                    <td>{molequi}</td>
-                </tr>
-                <tr>
-                    <th>Serial de la Bios:</th>
-                    <td>{serialequibios}</td>
-                </tr>
-                <tr>
-                    <th>Servicio por garantia:</th>
-                    <td>{servgarantia}</td>
-                </tr>
-                <tr>
-                    <th>Servicio con repuesto:</th>
-                    <td>{serrespuesto}</td>
-                </tr>
-            </table>
-        </div>
+    <div class="table-container">
+      <table>
+        <tr>
+          <th class="texcenter">IMPORTANTE</th>
+        </tr>
+        <tr>
+          <th class="descriodocutme">
+            <p>
+              Este documento tiene como objetivo recopilar y registrar la
+              información necesaria, puntual y verídica para dar una correcta
+              solución a la petición de servicio. Todo lo que se registre en
+              este documento hará parte del servicio y se entenderá como un
+              hecho cumplido. Todos los campos son de obligatorio registro. La
+              firma por parte del usuario dará a entender para ambas partes que
+              la petición del servicio fue solucionada a entera satisfacción
+              emitiendo o no una solución definitiva de la falla.
+            </p>
+          </th>
+        </tr>
+      </table>
 
-        <div class="table-container">
-            <table>
-                <tr><th class="texcenter">DETALLE DEL SERVICIO</th></tr>
-                <tr>
-                    <th>(Espacio exclusivo para el usuario) Describa puntualmente la falla que presenta el equipo:
-                        <p>{descripuno}</p></th>
-                </tr>
-                <tr>
-                    <th>(Espacio exclusivo para el técnico) Describa el estado físico y visual inicial del equipo:
-                       <p>{descripdos}</p></th>
-                </tr>
-                <tr>
-                    <th>(Espacio exclusivo para el técnico) Solución detallada, amplia y concluyente del servicio:
-                       <p>{descriptres}</p></th>
-                </tr>
-                <tr>
-                    <th>(Espacio exclusivo para el técnico) Observaciones y recomendaciones: <p>{descripcuatro}</p></th>
-                </tr>
-            </table>
-        </div>
+      <table>
+        <tr>
+          <th class="texcenter" colspan="2">DATOS DEL EQUIPO</th>
+        </tr>
+        <tr>
+          <th>Nombre del equipo:</th>
+          <td>{nombreequi}</td>
+        </tr>
+        <tr>
+          <th>Etiqueta del equipo:</th>
+          <td>{etiquetaequi}</td>
+        </tr>
+        <tr>
+          <th>Marca:</th>
+          <td>{marcaequi}</td>
+        </tr>
+        <tr>
+          <th>Modelo:</th>
+          <td>{molequi}</td>
+        </tr>
+        <tr>
+          <th>Serial de la Bios:</th>
+          <td>{serialequibios}</td>
+        </tr>
+        <tr>
+          <th>Servicio por garantía:</th>
+          <td>{servgarantia}</td>
+        </tr>
+        <tr>
+          <th>Servicio con repuesto:</th>
+          <td>{serrespuesto}</td>
+        </tr>
+      </table>
+    </div>
 
-        <div class="table-container">
-            <table>
-                <tr>
-                    <th class="texcenter">Firma del cliente</th>
-                    <th class="texcenter">Firma del técnico</th>
-                </tr>
-                <tr>
-                    <th>Nombre: {nombreuser}</th>
-                    <th>Nombre: {nombretec}</th>
-                </tr>
-                <tr>
-                    <th>Cedula: {cedulaclien}</th>
-                    <th>Cedula: {cedulatec}</th>
-                </tr>
-                <tr>
-                    <th>Firma: {firmacliente}</th>
-                    <th>Firma: {firmatec}</th>
-                </tr>
-            </table>
-        </div>
-        <p class="advertencia">Tecolsoft S.A.S no se hace responsable por pérdida de datos en el equipo revisado. Este
-            servicio tiene garantía de 3 días hábiles.</p>
-</body>
+    <div class="table-container">
+      <table>
+        <tr>
+          <th class="texcenter">DETALLE DEL SERVICIO</th>
+        </tr>
+        <tr>
+          <th>
+            (Espacio exclusivo para el usuario) Describa puntualmente la falla
+            que presenta el equipo:
+            <p>{descripuno}</p>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            (Espacio exclusivo para el técnico) Describa el estado físico y
+            visual inicial del equipo:
+            <p>{descripdos}</p>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            (Espacio exclusivo para el técnico) Solución detallada, amplia y
+            concluyente del servicio:
+            <p>{descriptres}</p>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            (Espacio exclusivo para el técnico) Observaciones y recomendaciones:
+            <p>{descripcuatro}</p>
+          </th>
+        </tr>
+      </table>
+    </div>
 
+    <div class="table-container">
+      <table>
+        <tr>
+          <th class="texcenter">Firma del cliente</th>
+          <th class="texcenter">Firma del técnico</th>
+        </tr>
+        <tr>
+          <th>Nombre: {nombreuser}</th>
+          <th>Nombre: {nombretec}</th>
+        </tr>
+        <tr>
+          <th>Cedula: {cedulaclien}</th>
+          <th>Cedula: {cedulatec}</th>
+        </tr>
+        <tr>
+          <th>Firma: {firmacliente}</th>
+          <th>Firma: {firmatec}</th>
+        </tr>
+      </table>
+    </div>
+    <p class="advertencia">
+      Tecolsoft S.A.S no se hace responsable por pérdida de datos en el equipo
+      revisado. Este servicio tiene garantía de 3 días hábiles.
+    </p>
+  </body>
 </html>
