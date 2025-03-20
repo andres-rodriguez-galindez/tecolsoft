@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        margin: 0;
+        padding: 5px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 10px; /* Reducimos el tamaño base para ahorrar espacio */
+      }
+
+      .table-container {
+        margin-top: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        overflow: auto;
+        page-break-inside: avoid; /* Evita que las tablas se dividan entre páginas */
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        page-break-inside: avoid;
+      }
+
+      th,
+      td {
+        border: 0.5px solid rgb(255, 255, 255);
+        text-align: left;
+        padding: 4px; /* Reducimos el padding para ahorrar espacio */
+        background-color: rgb(192, 201, 250);
+        color: rgb(0, 0, 0);
+        vertical-align: top; /* Alinea el contenido en la parte superior */
+      }
+
+      .advertencia,
+      .descriodocutme {
+        text-align: center;
+        font-size: 8px; /* Tamaño más pequeño para notas */
+        background-color: #ffffff;
+      }
+
+      .texcenter {
+        text-align: center;
+        background-color: rgb(13, 0, 70);
+        color: rgb(255, 255, 255);
+      }
+
+      .D1 {
+        text-align: center;
+      }
+
+      p {
+        color: rgb(0, 0, 0);
+        overflow-wrap: break-word;
+        word-break: break-all;
+        font-weight: normal;
+        margin: 0; /* Eliminamos márgenes innecesarios */
+      }
+
+      /* Reglas específicas para impresión */
+      @media print {
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        .table-container {
+          page-break-inside: avoid;
+        }
+        table {
+          page-break-inside: avoid;
+        }
+        th,
+        td {
+          page-break-inside: avoid;
+        }
+        /* Aseguramos que el contenido no se corte */
+        @page {
+          size: A4;
+          margin: 5mm;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="table-container">
+      <table>
+        <tr>
+          <th rowspan="2" class="texcenter">Tecolsoft</th>
+          <th colspan="2" class="texcenter">
+            Proceso: Compras
+          </th>
+          <th colspan="2" class="texcenter">Tipo de proceso: Realización</th>
+        </tr>
+        <tr>
+          <th colspan="4" class="texcenter">REQUISICIÓN DE BIENES</th>
+        </tr>
+        <tr>
+          <th class="texcenter">S.A.S</th>
+          <th class="texcenter">Fecha de actualización: 20/03/2025</th>
+          <th class="texcenter">Versión: 06</th>
+          <th class="texcenter">Codigo: FOR-CO-004</th>
+          <th class="texcenter">Nivel de confidencial: Confidencial</th>
+        </tr>
+      </table>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <tr>
+          <th class="texcenter" colspan="4">DATOS DEL CLIENTE</th>
+        </tr>
+        <tr>
+          <th>Fecha:</th>
+          <td>{fechaactual}</td>
+        </tr>
+        <tr>
+            <th>Nombre del solicitante:</th>
+            <td>{nomsolicitante}</td>
+        </tr>
+        <tr>
+            <th>Cargo del solicitante:</th>
+            <td>{cargosolicitante}</td>
+        </tr>        
+      </table>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <tr>
+          <th class="texcenter">DETALLE DE LA REQUISICIÓN</th>
+        </tr>
+        <tr>
+          <th class="descriodocutme">
+            <p>
+                Especificar uno de estos: Insumos para mantenimiento / Insumos de aseo y/o papeleria / Recursos Fisicos
+            </p>
+          </th>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <th class="texcenter" colspan="5">DATOS</th>
+        </tr>
+        <tr>
+          <th class="D1">ITEM</th>
+          <th class="D1">DESCRIPCIÓN</th>
+          <th class="D1">VALOR UNIDAD</th>
+          <th class="D1">CANT. SOL</th>
+          <th class="D1">VALOR TOTAL</th>
+        </tr>
+        <tr>
+            <th>1.</th>
+            <th>{descripcion1}</th>
+            <th>{valor1}</th>
+            <th>{cantidad1}</th>
+            <th>{valordos1}</th>
+        </tr>
+        <tr>
+            <th>2.</th>
+            <th>{descripcion2}</th>
+            <th>{valor2}</th>
+            <th>{cantidad2}</th>
+            <th>{valordos2}</th>
+        </tr>
+        <tr>
+            <th>3.</th>
+            <th>{descripcion3}</th>
+            <th>{valor3}</th>
+            <th>{cantidad3}</th>
+            <th>{valordos3}</th>
+        </tr>
+        <tr>
+            <th>4.</th>
+            <th>{descripcion4}</th>
+            <th>{valor4}</th>
+            <th>{cantidad4}</th>
+            <th>{valordos4}</th>
+        </tr>
+        <tr>
+            <th>5.</th>
+            <th>{descripcion5}</th>
+            <th>{valor5}</th>
+            <th>{cantidad5}</th>
+            <th>{valordos5}</th>
+        </tr>
+        <tr>
+            <th>6.</th>
+            <th>{descripcion6}</th>
+            <th>{valor6}</th>
+            <th>{cantidad6}</th>
+            <th>{valordos6}</th>
+        </tr>
+        <tr>
+            <th>7.</th>
+            <th>{descripcion7}</th>
+            <th>{valor7}</th>
+            <th>{cantidad7}</th>
+            <th>{valordos7}</th>
+        </tr>
+        <tr>
+            <th>8.</th>
+            <th>{descripcion8}</th>
+            <th>{valor8}</th>
+            <th>{cantidad8}</th>
+            <th>{valordos8}</th>
+        </tr>
+        <tr>
+            <th>9.</th>
+            <th>{descripcion9}</th>
+            <th>{valor9}</th>
+            <th>{cantidad9}</th>
+            <th>{valordos9}</th>
+        </tr>
+        <tr>
+            <th>10.</th>
+            <th>{descripcion10}</th>
+            <th>{valor10}</th>
+            <th>{cantidad10}</th>
+            <th>{valordos10}</th>
+        </tr>
+        <tr>
+            <th>11.</th>
+            <th>{descripcion11}</th>
+            <th>{valor11}</th>
+            <th>{cantidad11}</th>
+            <th>{valordos11}</th>
+        </tr>
+        <tr>
+            <th colspan="4">Costo total aproximado</th>
+            <td>{sumatotal}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="table-container">
+      <table>
+        <tr>
+          <th class="texcenter">EVALUACIÓN DE LA MEJOR OPCIÓN</th>
+        </tr>
+        <td>Proveedor 1: {proveedor1}</td>
+          </th>
+          <tr>
+            <td>Proveedor 2: {proveedor2}</td>
+          </tr>
+          <tr>
+            <td>Proveedor 3: {proveedor3}</td>
+          </tr>
+        </tr>
+      </table>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <tr>
+            <th>Justificación</th>
+            <td>{justificacion}</td>
+        </tr>
+        <tr>
+            <th>Observaciones</th>
+            <td>{observacion}</td>
+        </tr>
+      </table>
+      <table>
+        <h3>Autorizado:</h3>
+        <tr>
+            <th>Si</th>
+            <td>{si}</td>
+            <th>No</th>
+            <td>{no}</td>
+        </tr>
+        <h3>Fecha Autorización: {fechaauto}</h3>        
+      </table>
+      <h3>Aprobo:</h3>
+    </div>
+  </body>
+</html>
