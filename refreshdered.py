@@ -36,18 +36,25 @@ def ejecutar_comando(comando):
 def obtener_ip():
     """Obtiene la dirección IP actual."""
     try:
-        resultado = subprocess.run("ipconfig", shell=True, capture_output=True, text=True, encoding='utf-8')
+        resultado = subprocess.run(["ipconfig"], capture_output=True, text=True, encoding='utf-8')
         if resultado.returncode == 0:
-            # Buscar las líneas que contienen IPv4
             lineas = resultado.stdout.split('\n')
             ips = []
+            adaptador_actual = ""
+            
             for linea in lineas:
-                if "IPv4" in linea and ":" in linea:
-                    ip = linea.split(":")[1].strip()
-                    adaptador = lineas[lineas.index(linea)-2].strip()
-                    ips.append(f"{adaptador}: {ip}")
-            return "\n".join(ips) if ips else "No se encontró dirección IP"
-        return "No se pudo obtener la dirección IP"
+                linea = linea.strip()
+                if linea and not linea.startswith(' '):
+                    adaptador_actual = linea
+                if "IPv4" in linea:
+                    ip = linea.split(": ")[-1].strip()
+                    if adaptador_actual and ip:
+                        ips.append(f"{adaptador_actual}\n   IP: {ip}")
+            
+            if ips:
+                return "\n".join(ips)
+            return "No se encontraron direcciones IP"
+        return "Error al ejecutar ipconfig"
     except Exception as e:
         return f"Error al obtener IP: {str(e)}"
 
