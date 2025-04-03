@@ -33,6 +33,24 @@ def ejecutar_comando(comando):
         print(f"✗ Error inesperado: {str(e)}")
         return False
 
+def obtener_ip():
+    """Obtiene la dirección IP actual."""
+    try:
+        resultado = subprocess.run("ipconfig", shell=True, capture_output=True, text=True, encoding='utf-8')
+        if resultado.returncode == 0:
+            # Buscar las líneas que contienen IPv4
+            lineas = resultado.stdout.split('\n')
+            ips = []
+            for linea in lineas:
+                if "IPv4" in linea and ":" in linea:
+                    ip = linea.split(":")[1].strip()
+                    adaptador = lineas[lineas.index(linea)-2].strip()
+                    ips.append(f"{adaptador}: {ip}")
+            return "\n".join(ips) if ips else "No se encontró dirección IP"
+        return "No se pudo obtener la dirección IP"
+    except Exception as e:
+        return f"Error al obtener IP: {str(e)}"
+
 def es_administrador():
     """Verifica si el script se está ejecutando como administrador."""
     try:
@@ -51,6 +69,11 @@ def main():
         return
 
     print("\n=== INICIANDO PROCESO DE REFRESCADO DE RED ===")
+    print("\nDirección IP actual:")
+    print(obtener_ip())
+    print("\n⚠ IMPORTANTE: La conexión se perderá temporalmente durante el proceso")
+    input("Presione Enter para continuar...")
+
     comandos = [
         "ipconfig /flushdns",
         "ipconfig /release",
@@ -64,6 +87,9 @@ def main():
         time.sleep(1)
 
     print(f"\n=== PROCESO COMPLETADO ({exitos}/{len(comandos)} exitosos) ===")
+    print("\nNueva dirección IP asignada:")
+    print(obtener_ip())
+    print("\n✓ La conexión de red ha sido refrescada completamente")
     input("\nPresione Enter para cerrar...")
 
 if __name__ == "__main__":
