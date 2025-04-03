@@ -8,10 +8,18 @@ def ejecutar_comando(comando):
     """Ejecuta un comando en el terminal y devuelve el resultado."""
     try:
         print(f"\nEjecutando: {comando}")
+        if "release" in comando:
+            print("⚠ La conexión de red se desactivará temporalmente...")
         resultado = subprocess.run(comando, shell=True, capture_output=True, text=True, encoding='utf-8')
         print("-" * 50)
         if resultado.returncode == 0:
             print(f"✓ Comando ejecutado exitosamente")
+            if "release" in comando:
+                print("⚠ Conexión desactivada. Espere...")
+                time.sleep(2)
+            elif "renew" in comando:
+                print("⚠ Reconectando... Esto puede tomar unos segundos...")
+                time.sleep(5)
             print(resultado.stdout)
             return True
         else:
