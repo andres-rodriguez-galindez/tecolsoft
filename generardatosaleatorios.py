@@ -7,6 +7,36 @@ from datetime import datetime, timedelta
 # Configurar Faker para datos en español
 fake = Faker('es_ES')
 
+# Datos predefinidos
+CATEGORIAS_PRODUCTOS = {
+    'ELEC': 'Electrónica',
+    'ROPA': 'Ropa',
+    'HOGR': 'Hogar',
+    'ALIM': 'Alimentos',
+    'JUGT': 'Juguetes'
+}
+
+PRODUCTOS_POR_CATEGORIA = {
+    'ELEC': ['TV-', 'LAP-', 'CEL-', 'TAB-', 'AUD-'],
+    'ROPA': ['CAM-', 'PAN-', 'ZAP-', 'VES-', 'CHA-'],
+    'HOGR': ['MUE-', 'DEC-', 'COC-', 'BAÑ-', 'JAR-'],
+    'ALIM': ['LAC-', 'BEB-', 'SNK-', 'CON-', 'FRU-'],
+    'JUGT': ['JGT-', 'MES-', 'EDU-', 'DEP-', 'COL-']
+}
+
+ESTADOS_MEXICO = [
+    'AGS', 'BCN', 'BCS', 'CAM', 'CHS', 'CHH', 'COA', 'COL', 'CDMX', 'DGO',
+    'GTO', 'GRO', 'HGO', 'JAL', 'MEX', 'MIC', 'MOR', 'NAY', 'NLE', 'OAX',
+    'PUE', 'QRO', 'ROO', 'SLP', 'SIN', 'SON', 'TAB', 'TAM', 'TLX', 'VER',
+    'YUC', 'ZAC'
+]
+
+def generar_codigo_producto():
+    categoria = random.choice(list(CATEGORIAS_PRODUCTOS.keys()))
+    prefijo = random.choice(PRODUCTOS_POR_CATEGORIA[categoria])
+    numero = str(random.randint(1000, 9999))
+    return prefijo + numero
+
 # Función para generar fechas aleatorias
 def random_date(start_date, end_date):
     time_between = end_date - start_date
@@ -47,7 +77,7 @@ df_clientes = pd.DataFrame(clientes)
 # 3. Hoja de Productos (2,000 filas)
 productos = {
     'ID_Producto': range(1, 2001),
-    'Nombre_Producto': [fake.word().capitalize() + " " + str(i) for i in range(1, 2001)],
+    'Nombre_Producto': [generar_codigo_producto() for _ in range(2000)],
     'Categoría': [random.choice(['Electrónica', 'Ropa', 'Hogar', 'Alimentos', 'Juguetes']) for _ in range(2000)],
     'Precio_Estandar': [round(random.uniform(5, 600), 2) for _ in range(2000)]
 }
