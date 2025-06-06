@@ -1,0 +1,124 @@
+
+
+
+  <meta>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+      color: #333333;
+    }
+    .container {
+      width: 100%;
+      max-width: 640px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .logo img {
+      max-width: 200px;
+      height: auto;
+    }
+    h2 {
+      text-align: center;
+      color: #010B72;
+      margin-bottom: 8px;
+    }
+    .description {
+      text-align: center;
+      font-size: 14px;
+      color: #555555;
+      margin-bottom: 24px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #dddddd;
+      vertical-align: top;
+    }
+    td.label {
+      background-color: #f1f1f1;
+      font-weight: bold;
+      width: 40%;
+    }
+    .note {
+      margin-top: 24px;
+      padding: 12px;
+      background-color: #fff4cc;
+      border-left: 4px solid #ffcc00;
+      font-size: 14px;
+      color: #7a5901;
+    }
+    @media screen and (max-width: 600px) {
+      table, td {
+        font-size: 14px;
+        display: block;
+        width: 100%;
+      }
+      td.label {
+        background-color: transparent;
+        font-weight: bold;
+      }
+    }
+  </style>
+
+
+  <div class="container">
+    <div class="logo">
+      <img src="https://tecolsoft.com/wp-content/uploads/2022/09/logo-nuevo-1920x478.png" alt="Tecolsoft Logo">
+    </div>
+    <h2>Solicitud de Incapacidades médicas</h2>
+    <div class="description">
+      Estimado equipo, se ha generado una solicitud de Incapacidad médica por parte del siguiente colaborador. A continuación, se presentan los detalles:
+    </div>
+    <table>
+      <tbody>
+        <tr>
+        <td class="label">Fecha de solicitud</td>
+        <td></td>
+      </tr>
+        <tr>
+        <td class="label">Nombre completo</td>
+        <td>@{outputs('Crear_elemento')?['body/NombreCompleto/Value']}</td>
+      </tr>
+      <tr>
+        <td class="label">Correo electrónico</td>
+        <td>@{outputs('Crear_elemento')?['body/Correo']}</td>
+      </tr>
+      <tr>
+        <td class="label">Tipo de solicitud</td>
+        <td>@{outputs('Crear_elemento')?['body/Solicitud/Value']}</td>
+      </tr>
+      <tr>
+        <td class="label">Fecha de inicio incapacidad</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="label">Fecha fin de incapacidad</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="label">EPS o entidad médica</td>
+        <td></td>
+      </tr>
+      
+   </tbody>
+  </table>
+    <div class="note">
+      <strong>Nota:</strong> Se adjunta <strong>formato pdf</strong>.
+    </div>
+  </div>
+
+
