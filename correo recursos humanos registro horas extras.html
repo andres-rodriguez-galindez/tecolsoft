@@ -103,46 +103,25 @@
         <td>@{outputs('Crear_elemento')?['body/Solicitud/Value']}</td>
       </tr>
       <tr>
-        <td class="label">Fecha del permiso laboral</td>
-        <td>@{body('Fecha_permiso_laboral')}</td>
-      </tr>
-      <tr>
-        <td class="label">Hora inicio permiso laboral</td>
-        <td>@{body('Hora_inicio_permiso_laboral')}</td>
-      </tr>
-      <tr>
-        <td class="label">Hora fin permiso laboral</td>
-        <td>@{body('Hora_fin_permiso_laboral')}</td>
-      </tr>
-      <tr>
-        <td class="label">Motivo del permiso laboral</td>
-        <td>@{outputs('Crear_elemento')?['body/Motivo_permiso_laboral']}</td>
-      </tr>
-      <tr>
-        <td class="label">Horas extras registradas</td>
-        <td>@{body('Horas_extras_registradas')}</td>
-      </tr>
-      <tr>
-        <td class="label">Fecha inicio hora extra</td>
+        <td class="label">Fecha inicio de hora extra</td>
         <td>@{body('Fecha_inicio_hora_extra')}</td>
       </tr>
       <tr>
-        <td class="label">Hora inicio hora extra</td>
+        <td class="label">Hora inicio de hora extra</td>
         <td>@{body('Hora_inicio_hora_extra')}</td>
       </tr>
       <tr>
-        <td class="label">Hora fin hora extra</td>
+        <td class="label">Fecha fin de hora extra</td>
+        <td>@{body('Fecha_fin_hora_extra')}</td>
+      </tr>
+      <tr>
+        <td class="label">Hora fin de hora extra</td>
         <td>@{body('Hora_fin_hora_extra')}</td>
       </tr>
       <tr>
-        <td class="label">Justificación</td>
+        <td class="label">Justificación del por qué las horas extras</td>
         <td>@{outputs('Crear_elemento')?['body/Justificacion_hora_extra']}</td>
       </tr>
     </tbody>
   </table>
-  <div class="note">
-    <strong>Nota:</strong> Recuerde que las solicitudes de permiso laboral deben
-    realizarse con mínimo <strong>48 horas de antelación</strong>, salvo casos
-    de prioridad previamente autorizados.
-  </div>
 </div>
