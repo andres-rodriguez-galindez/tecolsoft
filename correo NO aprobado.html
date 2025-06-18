@@ -1,0 +1,75 @@
+<!-- Correo de No Aprobado - Gestión Humana Compacto y Detallado -->
+<html>
+  <body style="margin: 0; padding: 0; background-color: #f7f7f7">
+    <div
+      style="
+        max-width: 440px;
+        margin: 30px auto;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px #e0e0e0;
+        padding: 26px 20px;
+        font-family: Arial, sans-serif;
+        color: #333;
+      "
+    >
+      <div style="text-align: center; margin-bottom: 14px">
+        <img
+          src="https://tecolsoft.com/wp-content/uploads/2022/09/logo-nuevo-1920x478.png"
+          alt="Logo Tecolsoft"
+          style="max-width: 170px; width: 100%; height: auto"
+        />
+      </div>
+      <h2
+        style="
+          color: #c0392b;
+          text-align: center;
+          font-size: 20px;
+          margin: 12px 0 18px 0;
+        "
+      >
+        Solicitud No Aprobada
+      </h2>
+      <p style="margin: 10px 0 10px 0; font-size: 15px">
+        Reciba un cordial saludo,
+        <b>@{triggerOutputs()?['body/NombreSolicitante']}</b>.
+      </p>
+      <p style="margin: 10px 0 10px 0; font-size: 15px">
+        Le informamos que, tras la revisión realizada por el área de
+        <b>Gestión Humana</b>, su solicitud con el número
+        <b>@{triggerOutputs()?['body/NumeroSolicitud']}</b>
+        <span style="color: #c0392b"><b>no ha sido aprobada</b></span
+        >.
+      </p>
+      <p style="margin: 10px 0 10px 0; font-size: 15px">
+        <b>Motivo:</b> La solicitud afecta directamente al cliente. Es necesario
+        validar estas fechas nuevamente con sus jefes inmediatos. Le
+        recomendamos dialogar con ellos para llegar a un acuerdo y así evitar
+        que los servicios de ambas partes se vean afectados.
+      </p>
+      <div
+        style="
+          background: #fbeee0;
+          border-left: 4px solid #c0392b;
+          padding: 11px 13px;
+          margin: 16px 0;
+          font-size: 14px;
+        "
+      >
+        <b>Importante:</b> El cliente no debe verse afectado bajo ninguna
+        circunstancia. La coordinación y comunicación con su equipo es
+        fundamental para garantizar la continuidad del servicio.
+      </div>
+      <p style="margin: 10px 0 10px 0; font-size: 15px">
+        Si tiene alguna inquietud o requiere mayor información, no dude en
+        comunicarse con el área de Gestión Humana. Estamos para apoyarle en lo
+        que necesite.
+      </p>
+      <p style="margin: 18px 0 0 0; font-size: 15px">
+        Atentamente,<br />
+        <b>Gestión Humana</b><br />
+        Tecolsoft
+      </p>
+    </div>
+  </body>
+</html>
