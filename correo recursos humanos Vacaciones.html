@@ -87,7 +87,7 @@
       <tbody>
         <tr>
         <td class="label">Fecha de solicitud</td>
-        <td></td>
+        <td>@{body('fecha_creado')}</td>
       </tr>
         <tr>
         <td class="label">Nombre completo</td>
@@ -110,18 +110,12 @@
         <td>@{body('Fecha_Fin_de_vacaciones')}</td>
       </tr>
       <tr>
-        <td class="label">Días</td>
-        <td>@{outputs('dias')}</td>
-      </tr>
-      <tr>
         <td class="label">Observaciones</td>
         <td>@{outputs('Crear_elemento')?['body/Observaciones_x0020_a_x0020_tene']}</td>
       </tr>
       
     </tbody></table>
     <div class="note">
-      <strong>Nota:</strong> Recuerde que las solicitudes de vacaciones deben realizarse con mínimo <strong>15 días hábiles de antelación</strong>, salvo casos de prioridad previamente autorizados.
+      <strong>Nota:</strong> Recuerde que las solicitudes de vacaciones deben realizarse con mínimo <strong>20 días hábiles de antelación</strong>, salvo casos de prioridad previamente autorizados.
     </div>
   </div>
-
-
