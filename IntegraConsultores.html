@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Integra Consultores - Soluciones integrales de consultoría en ingeniería, gestión de proyectos, infraestructura y desarrollo organizacional">
+    <title>Integra Consultores - Consultoría Integral en Ingeniería y Gestión</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ecf0f1;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(52, 152, 219, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23f8f9fa" width="1200" height="800"/></svg>');
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(231, 76, 60, 0.3);
+        }
+
+        /* Mission & Vision */
+        .mission-vision {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .mv-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .mv-card h3 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Services */
+        .services {
+            padding: 80px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-left: 5px solid #3498db;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        /* Advantages */
+        .advantages {
+            padding: 80px 0;
+            background: #2c3e50;
+            color: white;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .advantage-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .advantage-icon {
+            font-size: 3rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        /* Clients */
+        .clients {
+            padding: 80px 0;
+            background: #ecf0f1;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .client-card {
+            background: white;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Contact */
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            margin-top: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .submit-btn {
+            background: #e74c3c;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #c0392b;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .mv-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Integra Consultores</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#ventajas">Ventajas</a></li>
+                <li><a href="#clientes">Clientes</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Soluciones Integrales de Consultoría</h1>
+                <p>Ingeniería, gestión de proyectos, infraestructura y desarrollo organizacional con calidad técnica y sostenibilidad</p>
+                <a href="#contacto" class="cta-button">Solicitar Consulta</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestra Propuesta de Valor</h2>
+                <p>Comprometidos con la excelencia y el impacto social</p>
+            </div>
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <h3>🎯 Misión</h3>
+                    <p>Ofrecer soluciones integrales de consultoría en ingeniería, gestión de proyectos, infraestructura y desarrollo organizacional, asegurando calidad técnica, cumplimiento normativo, bienestar laboral y sostenibilidad.</p>
+                </div>
+                <div class="mv-card">
+                    <h3>🚀 Visión 2030</h3>
+                    <p>Ser reconocidos en Colombia como la empresa de consultoría líder en soluciones multidisciplinares que integran infraestructura, talento humano y sistemas de gestión, generando alto impacto social y económico.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestros Servicios</h2>
+                <p>Soluciones especializadas para cada necesidad de su organización</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Consultoría en Ingeniería Civil</h3>
+                    <p>Formulación, estructuración y supervisión de proyectos de obras civiles, urbanismo, vías y transporte. Interventorías técnicas, administrativas, financieras, legales y ambientales.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👥</div>
+                    <h3>Gestión del Talento Humano</h3>
+                    <p>Selección, capacitación y retención de talento. Diseño de programas de bienestar laboral, cultura organizacional y evaluación de competencias.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Seguridad y Salud en el Trabajo</h3>
+                    <p>Implementación de SG-SST según Decreto 1072/2015. Auditorías, capacitaciones, investigación de accidentes y mediciones higiénicas.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Sistemas Integrados de Gestión</h3>
+                    <p>Diseño e implementación de sistemas HSEQ. Auditorías internas, diagnósticos de cumplimiento y consultoría para certificaciones ISO.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages -->
+    <section id="ventajas" class="advantages">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white;">Ventajas Competitivas</h2>
+                <p style="color: #bdc3c7;">Lo que nos diferencia en el mercado</p>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-icon">🔄</div>
+                    <h3>Enfoque Integral</h3>
+                    <p>Ingeniería civil y gestión humana en una misma consultoría</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">🎓</div>
+                    <h3>Experiencia Certificada</h3>
+                    <p>Especializaciones en Gerencia de Proyectos, Talento Humano y SST</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">📊</div>
+                    <h3>Resultados Medibles</h3>
+                    <p>Experiencia en reducción de accidentes y optimización de procesos</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">🤝</div>
+                    <h3>Red de Contactos</h3>
+                    <p>Conexiones en sector público y privado para proyectos de alto impacto</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Clients -->
+    <section id="clientes" class="clients">
+        <div class="container">
+            <div class="section-header">
+                <h2>Clientes Objetivo</h2>
+                <p>Organizaciones que confían en nuestras soluciones</p>
+            </div>
+            <div class="clients-grid">
+                <div class="client-card">
+                    <h3>🏛️ Sector Público</h3>
+                    <p>Alcaldías y entidades territoriales</p>
+                </div>
+                <div class="client-card">
+                    <h3>🏗️ Construcción</h3>
+                    <p>Constructoras y firmas de ingeniería</p>
+                </div>
+                <div class="client-card">
+                    <h3>🚛 Manufactura</h3>
+                    <p>Empresas de manufactura, logística y transporte</p>
+                </div>
+                <div class="client-card">
+                    <h3>📋 Certificaciones</h3>
+                    <p>Organizaciones que buscan certificaciones ISO</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white;">Contactanos</h2>
+                <p style="color: #bdc3c7;">Iniciemos su proyecto juntos</p>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="empresa">Empresa</label>
+                    <input type="text" id="empresa" name="empresa">
+                </div>
+                <div class="form-group">
+                    <label for="servicio">Servicio de Interés</label>
+                    <select id="servicio" name="servicio" style="width: 100%; padding: 12px; border: none; border-radius: 5px;">
+                        <option value="">Seleccione un servicio</option>
+                        <option value="ingenieria">Consultoría en Ingeniería Civil</option>
+                        <option value="talento">Gestión del Talento Humano</option>
+                        <option value="sst">Seguridad y Salud en el Trabajo</option>
+                        <option value="sistemas">Sistemas Integrados de Gestión</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Describa su proyecto o necesidad..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Enviar Solicitud</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Integra Consultores. Todos los derechos reservados.</p>
+            <p>Soluciones integrales para el crecimiento de su organización</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Gracias por su interés. Nos pondremos en contacto con usted pronto.');
+        });
+    </script>
+</body>
+</html>

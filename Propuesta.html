@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Propuesta de Desarrollo Web Profesional</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      }
+
+      header {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        opacity: 0.3;
+      }
+
+      header h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 1;
+      }
+
+      header p {
+        font-size: 1.2em;
+        opacity: 0.9;
+        position: relative;
+        z-index: 1;
+      }
+
+      .section {
+        padding: 50px 20px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .section:last-child {
+        border-bottom: none;
+      }
+
+      .section-title {
+        font-size: 2.5em;
+        color: #1e3c72;
+        margin-bottom: 30px;
+        text-align: center;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .subsection-title {
+        font-size: 1.8em;
+        color: #2a5298;
+        margin: 30px 0 20px 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .subsection-title i {
+        margin-right: 10px;
+        color: #667eea;
+      }
+
+      .table-container {
+        overflow-x: auto;
+        margin: 20px 0;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      th {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        color: white;
+        padding: 15px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.95em;
+      }
+
+      td {
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+        vertical-align: top;
+      }
+
+      tr:hover {
+        background: #f8f9ff;
+        transition: background 0.3s ease;
+      }
+
+      .price {
+        font-weight: bold;
+        color: #27ae60;
+        font-size: 1.1em;
+      }
+
+      .highlight {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        color: white;
+        padding: 2px 8px;
+        border-radius: 15px;
+        font-size: 0.85em;
+        font-weight: bold;
+      }
+
+      .note {
+        background: #fff3cd;
+        border: 1px solid #ffeaa7;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 20px 0;
+        font-style: italic;
+        color: #856404;
+      }
+
+      .note i {
+        color: #f39c12;
+        margin-right: 8px;
+      }
+
+      .payment-methods {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+      }
+
+      .payment-card {
+        background: white;
+        border: 2px solid #e9ecef;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .payment-card:hover {
+        border-color: #667eea;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
+      }
+
+      .payment-card i {
+        font-size: 2.5em;
+        color: #667eea;
+        margin-bottom: 15px;
+      }
+
+      .payment-card h4 {
+        color: #1e3c72;
+        margin-bottom: 10px;
+      }
+
+      .conditions-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+      }
+
+      .condition-item {
+        display: flex;
+        align-items: flex-start;
+        padding: 15px;
+        background: #f8f9ff;
+        border-radius: 8px;
+        border-left: 4px solid #667eea;
+      }
+
+      .condition-item i {
+        color: #27ae60;
+        margin-right: 15px;
+        margin-top: 3px;
+        font-size: 1.2em;
+      }
+
+      .cta-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 15px 30px;
+        background: white;
+        color: #1e3c72;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .btn i {
+        margin-right: 8px;
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .btn-secondary:hover {
+        background: white;
+        color: #1e3c72;
+      }
+
+      footer {
+        background: #1e3c72;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .footer-section h4 {
+        margin-bottom: 15px;
+        color: #667eea;
+      }
+
+      .footer-section p,
+      .footer-section a {
+        color: #bbb;
+        text-decoration: none;
+        margin-bottom: 5px;
+        display: block;
+      }
+
+      .footer-section a:hover {
+        color: white;
+      }
+
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2em;
+        }
+
+        .section-title {
+          font-size: 2em;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        th,
+        td {
+          padding: 10px 8px;
+          font-size: 0.9em;
+        }
+      }
+
+      .loading {
+        display: none;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .spinner {
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #667eea;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 10px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-content {
+        background-color: white;
+        margin: 5% auto;
+        padding: 30px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 600px;
+        position: relative;
+      }
+
+      .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #999;
+      }
+
+      .close:hover {
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1><i class="fas fa-laptop-code"></i> Desarrollo Web Profesional</h1>
+        <p>
+          Diseño, desarrollo y posicionamiento SEO de clase mundial<br />
+          <strong
+            >Condiciones transparentes • Modalidades flexibles • Resultados
+            garantizados</strong
+          >
+        </p>
+      </header>
+
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-rocket"></i> Paquetes de Desarrollo
+        </h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th><i class="fas fa-box"></i> Paquete</th>
+                <th>
+                  <i class="fas fa-dollar-sign"></i> Precio (IVA incluido)
+                </th>
+                <th><i class="fas fa-check-circle"></i> Incluye</th>
+                <th><i class="fas fa-clock"></i> Entrega</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Landing Page Básica</strong><br /><span
+                    class="highlight"
+                    >POPULAR</span
+                  >
+                </td>
+                <td class="price">$476,000 – $2,499,000</td>
+                <td>1-6 páginas, responsivo, formulario, SEO básico, SSL</td>
+                <td>3-8 días</td>
+              </tr>
+              <tr>
+                <td><strong>Web Emprendedor</strong></td>
+                <td class="price">$1,785,000 – $4,522,000</td>
+                <td>Hasta 10 páginas, blog, formularios avanz., panel admin</td>
+                <td>8-15 días</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Web PYME Corporativa</strong><br /><span
+                    class="highlight"
+                    >RECOMENDADO</span
+                  >
+                </td>
+                <td class="price">$2,380,000 – $5,950,000</td>
+                <td>
+                  10-15 páginas, diseño personalizado, SEO completo, analytics
+                </td>
+                <td>12-25 días</td>
+              </tr>
+              <tr>
+                <td><strong>E-commerce Básico</strong></td>
+                <td class="price">$3,570,000 – $8,925,000</td>
+                <td>Hasta 20 productos, carrito, 1-2 pasarelas, inventario</td>
+                <td>15-20 días</td>
+              </tr>
+              <tr>
+                <td><strong>E-commerce Avanzado</strong></td>
+                <td class="price">$10,710,000 – $20,230,000</td>
+                <td>30+ productos, múltiples pasarelas, reportes avanzados</td>
+                <td>30-45 días</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Desarrollo Premium</strong><br /><span
+                    class="highlight"
+                    >ENTERPRISE</span
+                  >
+                </td>
+                <td class="price">$17,850,000 – $41,650,000</td>
+                <td>Funcionalidades a medida, APIs, alta complejidad</td>
+                <td>45-90 días</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">
+          <i class="fas fa-info-circle"></i>
+          <strong>Importante:</strong> Todos los precios incluyen IVA 19%. Son
+          pagos únicos por desarrollo completo (no pagos anuales).
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-credit-card"></i> Modalidades de Pago
+        </h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th><i class="fas fa-payment"></i> Modalidad</th>
+                <th><i class="fas fa-percentage"></i> Descuento/Recargo</th>
+                <th><i class="fas fa-info"></i> Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Pago Total Anticipado</strong>
+                  <span class="highlight">DESCUENTO</span>
+                </td>
+                <td class="price">5% descuento</td>
+                <td>Pago completo antes de iniciar el proyecto</td>
+              </tr>
+              <tr>
+                <td><strong>50% Anticipo + 50% Entrega</strong></td>
+                <td>Normal</td>
+                <td>Mitad al firmar contrato, mitad al entregar</td>
+              </tr>
+              <tr>
+                <td><strong>30% Anticipo + 70% Entrega</strong></td>
+                <td>Normal</td>
+                <td>Anticipo al firmar, resto al finalizar</td>
+              </tr>
+              <tr>
+                <td><strong>3 Cuotas</strong> (proyectos >$5M)</td>
+                <td style="color: #e74c3c">10% recargo</td>
+                <td>3 pagos mensuales para proyectos grandes</td>
+              </tr>
+              <tr>
+                <td><strong>Contraentrega</strong> (Solo Landing)</td>
+                <td>Normal</td>
+                <td>Pago total al recibir el sitio web terminado</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-plus-circle"></i> Servicios Adicionales
+        </h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th><i class="fas fa-tools"></i> Servicio</th>
+                <th><i class="fas fa-dollar-sign"></i> Precio (IVA incl.)</th>
+                <th><i class="fas fa-sync-alt"></i> Renovación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><i class="fas fa-edit"></i> Redacción de contenidos</td>
+                <td class="price">$119,000 – $238,000 por página</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-camera"></i> Fotografía profesional</td>
+                <td class="price">$595,000 – $1,190,000</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-palette"></i> Logo + identidad</td>
+                <td class="price">$714,000 – $2,380,000</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>
+                  <i class="fas fa-graduation-cap"></i> Capacitación (2 h.)
+                </td>
+                <td class="price">$238,000</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>
+                  <i class="fas fa-exchange-alt"></i> Migración sitio existente
+                </td>
+                <td class="price">$476,000 – $1,190,000</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>
+                  <i class="fas fa-shield-alt"></i> Certificado SSL Premium
+                </td>
+                <td class="price">$357,000</td>
+                <td><span style="color: #e74c3c">Sí (anual)</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <i class="fas fa-tachometer-alt"></i> Optimización velocidad
+                </td>
+                <td class="price">$595,000</td>
+                <td>No</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-sync"></i> Servicios de Renovación
+        </h2>
+
+        <h3 class="subsection-title">
+          <i class="fas fa-calendar-alt"></i> Planes Anuales (Mantenimiento)
+        </h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th><i class="fas fa-layer-group"></i> Plan</th>
+                <th>
+                  <i class="fas fa-dollar-sign"></i> Precio Anual (IVA incl.)
+                </th>
+                <th><i class="fas fa-list-check"></i> Incluye</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Básico</strong></td>
+                <td class="price">$1,190,000 – $2,380,000</td>
+                <td>
+                  Hosting + dominio, updates, backup mensual, soporte email
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Profesional</strong>
+                  <span class="highlight">POPULAR</span>
+                </td>
+                <td class="price">$2,380,000 – $4,760,000</td>
+                <td>+ backup semanal, monitoreo, soporte prioritario</td>
+              </tr>
+              <tr>
+                <td><strong>Premium</strong></td>
+                <td class="price">$4,760,000 – $7,140,000</td>
+                <td>+ backup diario, CDN, análisis rendimiento</td>
+              </tr>
+              <tr>
+                <td><strong>Enterprise</strong></td>
+                <td class="price">$7,140,000 – $11,900,000</td>
+                <td>+ desarrollo, soporte 24/7, consultoría</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="subsection-title">
+          <i class="fas fa-calendar-check"></i> Servicios Mensuales
+        </h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th><i class="fas fa-cogs"></i> Servicio</th>
+                <th>
+                  <i class="fas fa-dollar-sign"></i> Precio Mensual (IVA incl.)
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><i class="fas fa-search"></i> SEO avanzado</td>
+                <td class="price">$500,000 – $3,000,000</td>
+              </tr>
+              <tr>
+                <td>
+                  <i class="fas fa-wrench"></i> Mantenimiento personalizado
+                </td>
+                <td class="price">$200,000 – $1,000,000</td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-file-alt"></i> Gestión de contenidos</td>
+                <td class="price">$100,000 – $600,000</td>
+              </tr>
+              <tr>
+                <td><i class="fas fa-bullhorn"></i> Publicidad digital</td>
+                <td class="price">$200,000 – $2,000,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-credit-card"></i> Métodos de Pago
+        </h2>
+        <div class="payment-methods">
+          <div class="payment-card">
+            <i class="fas fa-university"></i>
+            <h4>Transferencias</h4>
+            <p>PSE, Nequi, Daviplata, transferencias directas</p>
+          </div>
+          <div class="payment-card">
+            <i class="fas fa-credit-card"></i>
+            <h4>Tarjetas</h4>
+            <p>Visa, MasterCard, American Express, tarjetas locales</p>
+          </div>
+          <div class="payment-card">
+            <i class="fas fa-mobile-alt"></i>
+            <h4>Pasarelas</h4>
+            <p>Wompi, PayU, ePayco, Mercado Pago</p>
+          </div>
+          <div class="payment-card">
+            <i class="fas fa-money-bill"></i>
+            <h4>Efectivo</h4>
+            <p>Efecty, Baloto, Su Red, puntos de pago</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-file-contract"></i> Condiciones Generales
+        </h2>
+        <div class="conditions-list">
+          <div class="condition-item">
+            <i class="fas fa-check"></i>
+            <div>
+              <strong>Precios incluyen IVA 19%</strong><br />
+              Todos los valores mostrados ya tienen el impuesto incluido
+            </div>
+          </div>
+          <div class="condition-item">
+            <i class="fas fa-check"></i>
+            <div>
+              <strong>Pago único por desarrollo</strong><br />
+              Solo mantenimiento y servicios renovables son periódicos
+            </div>
+          </div>
+          <div class="condition-item">
+            <i class="fas fa-check"></i>
+            <div>
+              <strong>Dominio y hosting primer año</strong><br />
+              Incluidos en todos los paquetes de desarrollo
+            </div>
+          </div>
+          <div class="condition-item">
+            <i class="fas fa-check"></i>
+            <div>
+              <strong>Garantía 30 días</strong><br />
+              Soporte técnico gratuito durante el primer mes
+            </div>
+          </div>
+          <div class="condition-item">
+            <i class="fas fa-check"></i>
+            <div>
+              <strong>Capacitación incluida</strong><br />
+              1 hora de entrenamiento básico para usar el sitio
+            </div>
+          </div>
+          <div class="condition-item">
+            <i class="fas fa-check"></i>
+            <div>
+              <strong>Diseño responsive</strong><br />
+              Optimizado para móviles, tablets y escritorio
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-section">
+        <h2>
+          <i class="fas fa-handshake"></i> ¿Listo para comenzar tu proyecto?
+        </h2>
+        <p>
+          Obtén una cotización personalizada y comienza a destacar en línea hoy
+          mismo
+        </p>
+        <div class="cta-buttons">
+          <a href="#" class="btn" onclick="openModal()">
+            <i class="fas fa-calculator"></i> Solicitar Cotización
+          </a>
+          <a
+            href="https://wa.me/573173698626"
+            class="btn btn-secondary"
+            target="_blank"
+          >
+            <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <footer>
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4><i class="fas fa-building"></i> Tu Agencia Web</h4>
+            <p>
+              Especialistas en desarrollo web profesional y posicionamiento SEO
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4><i class="fas fa-envelope"></i> Contacto</h4>
+            <a href="mailto:contacto@tusitio.com"
+              >andres.rodriguez@tecolsoft.com</a
+            >
+            <a href="tel:+573001234567">+57 317 3698626</a>
+            <p>Cali, Colombia</p>
+          </div>
+          <div class="footer-section">
+            <h4><i class="fas fa-share-alt"></i> Síguenos</h4>
+            <a href="http://tecolsoft.com/"
+              ><i class="fab fa-facebook"></i> Facebook</a
+            >
+            <a href="http://tecolsoft.com/"
+              ><i class="fab fa-instagram"></i> Instagram</a
+            >
+            <a href="http://tecolsoft.com/"
+              ><i class="fab fa-linkedin"></i> LinkedIn</a
+            >
+          </div>
+        </div>
+        <p
+          style="
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            margin-top: 20px;
+          "
+        >
+          © 2025 Tu Agencia Web. Todos los derechos reservados.
+        </p>
+      </footer>
+    </div>
+
+    <!-- Modal para cotización -->
+    <div id="cotizacionModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>
+          <i class="fas fa-calculator"></i> Solicitar Cotización Personalizada
+        </h3>
+        <form id="cotizacionForm">
+          <p>
+            <strong>Nombre:</strong>
+            <input
+              type="text"
+              name="nombre"
+              required
+              style="width: 100%; padding: 8px; margin: 5px 0"
+            />
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <input
+              type="email"
+              name="email"
+              required
+              style="width: 100%; padding: 8px; margin: 5px 0"
+            />
+          </p>
+          <p>
+            <strong>Teléfono:</strong>
+            <input
+              type="tel"
+              name="telefono"
+              style="width: 100%; padding: 8px; margin: 5px 0"
+            />
+          </p>
+          <p>
+            <strong>Tipo de proyecto:</strong>
+            <select
+              name="proyecto"
+              required
+              style="width: 100%; padding: 8px; margin: 5px 0"
+            >
+              <option value="">Seleccionar...</option>
+              <option value="landing">Landing Page Básica</option>
+              <option value="emprendedor">Web Emprendedor</option>
+              <option value="pyme">Web PYME Corporativa</option>
+              <option value="ecommerce-basico">E-commerce Básico</option>
+              <option value="ecommerce-avanzado">E-commerce Avanzado</option>
+              <option value="premium">Desarrollo Premium</option>
+            </select>
+          </p>
+          <p>
+            <strong>Descripción del proyecto:</strong><br />
+            <textarea
+              name="descripcion"
+              rows="4"
+              style="width: 100%; padding: 8px; margin: 5px 0"
+            ></textarea>
+          </p>
+          <div style="text-align: center; margin-top: 20px">
+            <button type="submit" class="btn">
+              <i class="fas fa-paper-plane"></i> Enviar Solicitud
+            </button>
+          </div>
+        </form>
+        <div id="loading" class="loading">
+          <div class="spinner"></div>
+          <p>Enviando solicitud...</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openModal() {
+        document.getElementById("cotizacionModal").style.display = "block";
+      }
+
+      function closeModal() {
+        document.getElementById("cotizacionModal").style.display = "none";
+      }
+
+      // Cerrar modal al hacer clic fuera
+      window.onclick = function (event) {
+        var modal = document.getElementById("cotizacionModal");
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      // Manejar envío del formulario
+      document
+        .getElementById("cotizacionForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Mostrar loading
+          document.getElementById("loading").style.display = "block";
+
+          // Simular envío (aquí conectarías con tu backend)
+          setTimeout(function () {
+            document.getElementById("loading").style.display = "none";
+            alert(
+              "¡Gracias! Hemos recibido tu solicitud. Te contactaremos en las próximas 24 horas."
+            );
+            closeModal();
+            document.getElementById("cotizacionForm").reset();
+          }, 2000);
+        });
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Animaciones al hacer scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      // Aplicar animaciones a las secciones
+      document.querySelectorAll(".section").forEach((section) => {
+        section.style.opacity = "0";
+        section.style.transform = "translateY(30px)";
+        section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        observer.observe(section);
+      });
+    </script>
+  </body>
+</html>

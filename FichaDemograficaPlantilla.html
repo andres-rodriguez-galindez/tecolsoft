@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        margin: 0;
+        padding: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10px; /* Reducimos el tamaño base para ahorrar espacio */
+      }
+
+      .table-container {
+        margin-top: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        overflow: auto;
+        page-break-inside: avoid; /* Evita que las tablas se dividan entre páginas */
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        page-break-inside: avoid;
+      }
+      .texcenter-title {
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        font-size: 12px; /* Tamaño ligeramente mayor para títulos */
+        padding: 6px; /* Ajustamos el padding para títulos */
+        border: #ffffff;
+      }
+
+      th,
+      td {
+        border: 0.5px solid rgb(0, 0, 0);
+        text-align: left;
+        padding: 4px; /* Reducimos el padding para ahorrar espacio */
+        background-color: rgb(236, 234, 234);
+        color: rgb(0, 0, 0);
+        vertical-align: top; /* Alinea el contenido en la parte superior */
+      }
+
+      .advertencia,
+      .descriodocutme {
+        text-align: justify;
+        text-align: center;
+        font-size: 8px; /* Tamaño más pequeño para notas */
+        background-color: #ffffff;
+      }
+
+      .texcenter {
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+      }
+
+      p {
+        color: rgb(0, 0, 0);
+        overflow-wrap: break-word;
+        word-break: break-all;
+        font-weight: normal;
+        margin: 0; /* Eliminamos márgenes innecesarios */
+      }
+
+      /* Reglas específicas para impresión */
+      @media print {
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        .table-container {
+          page-break-inside: avoid;
+        }
+        table {
+          page-break-inside: avoid;
+        }
+        th,
+        td {
+          page-break-inside: avoid;
+        }
+        /* Aseguramos que el contenido no se corte */
+        @page {
+          size: A4;
+          margin: 5mm;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="table-container">
+      <table>
+        <tr>
+          <th rowspan="2" class="texcenter">Tipo de documento: FORMATO</th>
+          <th rowspan="3" class="texcenter"><img src="https://ochschemical.com/wp-content/uploads/2023/10/Logo-OCHS-Chemical-Products.png" alt="" width="100" height="auto" ></th>
+          <th class="texcenter">Fecha de emisión o actualización: Septiembre/2025</th>
+          <th class="texcenter"> Codigo: 1</th>
+          
+        </tr>
+        <tr>
+          
+        </tr>
+        <tr>
+          <th rowspan="2" class="texcenter">Nombre del documento: INFORMACIÓN DEMOGRAFICA</th>
+          <th class="texcenter">Versión: 01</th>
+          <th class="texcenter">Página N°: 1 de 3</th>          
+        </tr>
+      </table>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <tr>
+          <th class="texcenter-title" colspan="6">Información demográfica</th>
+        </tr>
+        <tr>
+          <th class="texcenter" colspan="6">Datos Básicos</th>
+          </tr>
+        <tr>
+          <th>N° de identificación:</th>
+          <td>{identificacion}</td>
+          <th>Nombres:</th>
+          <td>{nombres}</td>
+          <th>Apellidos</th>
+          <td>{apellidos}</td>
+        </tr>
+        <tr>
+          <th>Genero:</th>
+          <td colspan="2">{genero}</td>
+          <th>Fecha de nacimiento:</th>
+          <td colspan="2">{fechanac}</td>
+        </tr>
+        <tr>
+          <th>Ciudad:</th>
+          <td>{ciudad}</td>
+          <th>Departamento:</th>
+          <td>{departamento}</td>
+          <th>País</th>
+          <td>{pais}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <tr>
+          <th class="texcenter" colspan="6">Información de residencia</th>
+        </tr>
+        <tr>
+          <th>Dirección:</th>
+          <td>{direccion}</td>
+          <th>Barrio:</th>
+          <td>{barrio}</td>
+          <th>Ciudad:</th>
+          <td>{ciudad}</td>
+        </tr>
+        <tr>
+          <th>Tipo de vivienda:</th>
+          <td colspan="">{tipovivienda}</td>
+          <th>Estrato:</th>
+          <td colspan="3">{estrato}</td>
+        </tr>
+        <tr>
+          <th>Teléfono:</th>
+          <td colspan="2">{telefono}</td>
+          <th>Celular:</th>
+          <td colspan="2">{celular}</td>
+        </tr>
+        <tr>
+          <th>Correo:</th>
+          <td colspan="6">{correo}</td>
+        </tr>
+        <tr>
+          <th>Contacto de emergencia:</th>
+          <td>{contactoemergencia}</td>
+          <th>Teléfono emergencia:</th>
+          <td>{telefonoemergencia}</td>
+          <th>Parentesco:</th>
+          <td>{parentesco}</td>
+        </tr>
+        
+      </table>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <tr>
+          <th colspan="6" class="texcenter">Nivel de escolaridad</th>
+        </tr>
+        <tr>
+          <th>
+            Grado de escolaridad alcanzado:
+            <td>{escolaridad}</td>
+            <th>Titulo obtenido:</th>
+            <td>{titulo}</td>
+          </th>
+        </tr>        
+      </table>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <tr>
+          <th colspan="6" class="texcenter">Información familiar</th>
+        </tr>
+        <tr>
+          <th>Estado Civil:</th>
+          <td colspan="6">{EstadoCivil}</td>
+        </tr>
+        <tr>
+          <th>Información de los hijos</th>
+          <th>Información de personas a cargo</th>
+        </tr>
+        <tr>
+          <td>{hijos}</td>
+          <td>{PersonasACargo}</td>
+        </tr>        
+      </table>
+    </div>
+
+   <div class="table-container">
+      <table>
+        <tr>
+          <th colspan="6" class="texcenter">Información laboral - OCHS S.A.S</th>
+        </tr>
+        <tr>
+          <th>Fecha de ingreso</th>
+          <td>{FechaIngreso}</td>
+          <th>Cargo actual</th>
+          <td colspan="3">{CargoActual}</td>
+        </tr>
+        <tr>
+          <th>Sede</th>
+          <td>{Sede}</td>
+          <th>Tipo de contrato</th>
+          <td colspan="3">{TipoContrato}</td>
+        </tr>
+        <tr>
+          <th>EPS</th>
+          <td>{EPS}</td>
+          <th >ARL</th>
+          <td>{ARL}</td>
+          <th>AFP</th>
+          <td>{AFP}</td>
+        </tr>
+        <tr>
+          <th colspan="6" class="texcenter">Información empleos anteriores</th>
+        </tr>
+        <tr>
+          <td colspan="6">{EmpleosAnteriores}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="table-container">
+      <td>
+      <p style="text-align: right"> <strong>Fecha de diligenciamiento del formato:</strong> {FechaDiligenciamiento}</p>
+      </td>
+    </div>
+  
+  </body>
+</html>
