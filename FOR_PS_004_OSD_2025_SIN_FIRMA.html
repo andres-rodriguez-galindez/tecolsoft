@@ -103,7 +103,11 @@
         <table>
           <tr>
             <th rowspan="2" class="texcenter">
-              <img src="{imagen}" alt="Imagen Logo" width="200px" />
+              <img
+                src="data:image/png;base64,[ImagenLogo]"
+                alt="Imagen Logo"
+                width="200px"
+              />
             </th>
             <th colspan="2" class="texcenter">
               Proceso: Prestación del servicio
@@ -130,39 +134,39 @@
           </tr>
           <tr>
             <th>Orden de servicio N°:</th>
-            <td>{caso}</td>
+            <td>@{triggerBody()?['ID']}</td>
             <th>Nombre de la empresa:</th>
-            <td>{empresa}</td>
+            <td>@{triggerBody()?['Empresa_x003a_Nombre_Empresa_emp/Value']}</td>
           </tr>
           <tr>
             <th>Fecha de solicitud:</th>
-            <td>{fechasol}</td>
+            <td>@{body('Fecha_y_hora_de_creacion')}</td>
             <th>Nombre del usuario:</th>
-            <td>{nombreuser}</td>
+            <td>@{outputs('nomsolicitante')}</td>
           </tr>
           <tr>
             <th>Fecha de atención:</th>
-            <td>{fechaate}</td>
+            <td>@{body('Fecha_y_hora_de_atencion')}</td>
             <th>Correo electrónico:</th>
-            <td>{mailuno}</td>
+            <td>@{outputs('correouser')}</td>
           </tr>
           <tr>
             <th>Fecha de llegada:</th>
-            <td>{horallegada}</td>
+            <td>@{body('Fecha_y_hora_de_llegada')}</td>
             <th>Dirección:</th>
-            <td>{direc}</td>
+            <td>@{triggerBody()?['Direcci_x00f3_ndelsolicitante']}</td>
           </tr>
           <tr>
             <th>Fecha de salida:</th>
-            <td>{horasalida}</td>
+            <td>@{body('Fecha_y_hora_de_salida')}</td>
             <th>Ciudad:</th>
-            <td>{ciudad}</td>
+            <td>@{outputs('ciudadc')}</td>
           </tr>
           <tr>
             <th>Tiempo de solución:</th>
-            <td>{tiemposol}</td>
+            <td>@{triggerBody()?['Sitio']}</td>
             <th>Nombre del Técnico asignado:</th>
-            <td>{nombretec}</td>
+            <td>@{outputs('nomtecnico')}</td>
           </tr>
         </table>
       </div>
@@ -194,31 +198,31 @@
           </tr>
           <tr>
             <th>Nombre del equipo:</th>
-            <td>{nombreequi}</td>
+            <td>@{triggerBody()?['Nombredelequipoatendido']}</td>
           </tr>
           <tr>
             <th>Etiqueta del equipo:</th>
-            <td>{etiquetaequi}</td>
+            <td>@{triggerBody()?['Activofijodelequipo']}</td>
           </tr>
           <tr>
             <th>Marca:</th>
-            <td>{marcaequi}</td>
+            <td>@{triggerBody()?['Marcadelequipo/Value']}</td>
           </tr>
           <tr>
             <th>Modelo:</th>
-            <td>{molequi}</td>
+            <td>@{triggerBody()?['Modelodelequipo']}</td>
           </tr>
           <tr>
             <th>Serial de la Bios:</th>
-            <td>{serialequibios}</td>
+            <td>@{triggerBody()?['Serialdelequipoatendido']}</td>
           </tr>
           <tr>
             <th>Servicio por garantía:</th>
-            <td>{servgarantia}</td>
+            <td>@{triggerBody()?['Servicioporgarantia/Value']}</td>
           </tr>
           <tr>
             <th>Servicio con repuesto:</th>
-            <td>{serrespuesto}</td>
+            <td>@{triggerBody()?['Servicioconrepuesto/Value']}</td>
           </tr>
         </table>
       </div>
@@ -232,28 +236,28 @@
             <th>
               (Espacio exclusivo para el técnico) Describa el estado físico y
               visual inicial del equipo:
-              <p>{descripdos}</p>
+              <p>@{triggerBody()?['Seguimientouno/Value']}</p>
             </th>
           </tr>
           <tr>
             <th>
               (Espacio exclusivo para el técnico) Solución detallada, amplia y
               concluyente del servicio:
-              <p>{descriptres}</p>
+              <p>@{triggerBody()?['Descripci_x00f3_ndelasoluci_x00f']}</p>
             </th>
           </tr>
           <tr>
             <th>
               (Espacio exclusivo para el técnico) Observaciones y
               recomendaciones:
-              <p>{descripcuatro}</p>
+              <p>@{triggerBody()?['Seguimientodos']}</p>
             </th>
           </tr>
           <tr>
             <th>
               (Espacio exclusivo para el usuario) Describa puntualmente la falla
               que presenta el equipo:
-              <p>{descripuno}</p>
+              <p>@{triggerBody()?['Description']}</p>
             </th>
           </tr>
         </table>
